@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Ali Esteki Carpets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #000000;
+            --accent: #000000;
+            --light: #F5F5DC;
+            --dark: #000000;
+            --text: #333333;
+            --gold: #000000;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+        }
+        
+        /* HEADER */
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 70px;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-left: 10px;
+            color: white;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--gold);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* MOBILE NAVIGATION */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background-color: var(--dark);
+            z-index: 999;
+            transition: right 0.4s ease;
+            padding: 100px 2rem 2rem;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+        }
+        
+        .mobile-nav li {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+        
+        .mobile-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-nav a:hover {
+            color: var(--gold);
+        }
+        
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://static.vecteezy.com/system/resources/previews/015/877/220/original/faq-banner-icon-in-flat-style-question-illustration-on-white-isolated-background-communication-sign-business-concept-vector.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            animation: fadeUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-gold {
+            background-color: var(--gold);
+        }
+        
+        .btn-gold:hover {
+            background-color: #b8941f;
+        }
+        
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* SECTIONS */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            margin: 15px auto;
+            animation: lineExpand 1.5s ease-out;
+        }
+        
+        @keyframes lineExpand {
+            0% { width: 0; }
+            100% { width: 80px; }
+        }
+        
+        /* FAQ NAVIGATION */
+        .faq-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .faq-nav-btn {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 30px;
+            color: var(--primary);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .faq-nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .faq-nav-btn:hover::before {
+            left: 100%;
+        }
+        
+        .faq-nav-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+        }
+        
+        .faq-nav-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* FAQ CATEGORIES */
+        .faq-category {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .faq-category.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .category-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            position: relative;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--gold);
+        }
+        
+        /* FAQ ITEMS */
+        .faq-container {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .faq-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(139, 69, 19, 0.05);
+        }
+        
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding-right: 2rem;
+        }
+        
+        .faq-icon {
+            color: var(--primary);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            font-size: 1.2rem;
+            position: absolute;
+            right: 1.5rem;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            background-color: #f9f9f9;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 1000px;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            color: var(--gold);
+        }
+        
+        .faq-answer p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* SEARCH SECTION */
+        .search-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-box {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #eee;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #f9f9f9;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        /* QUICK HELP */
+        .quick-help {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .help-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .help-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .help-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .help-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .help-card:hover .help-icon {
+            transform: scale(1.2) rotate(5deg);
+            color: var(--gold);
+        }
+        
+        .help-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* CONTACT CTA */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--dark) 0%, #4a2c1d 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-radius: 20px;
+            margin: 4rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(212,175,55,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-cta h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--gold);
+            margin-top: 10px;
+        }
+        
+        .footer-column p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .header-container {
+                justify-content: space-between;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .logo img {
+                height: 60px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 40vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
+            
+            .faq-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .faq-nav-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .search-section {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 0 1rem;
+                height: 35vh;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+            
+            .faq-question h3 {
+                font-size: 1.1rem;
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://static.wixstatic.com/media/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png/v1/fill/w_1110,h_638,al_c,q_90,enc_avif,quality_auto/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png" alt="Ali Esteki Carpets Logo">
+                <div class="logo-text">Ali Esteki Carpets</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About us.html">Chi Siamo</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About us.html">Chi Siamo</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="faq.html" style="color: var(--gold);">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Domande Frequenti</h1>
+            <p>Tutto ciò che devi sapere sui tappeti orientali</p>
+            <a href="#faq-content" class="btn btn-gold">Esplora le FAQ</a>
+        </div>
+    </section>
+
+    <!-- SEARCH SECTION -->
+    <section class="search-section">
+        <div class="search-container">
+            <h2>Come possiamo aiutarti?</h2>
+            <p>Cerca tra le nostre domande frequenti o naviga per categoria</p>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Cerca una domanda...">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <p>Non trovi quello che cerchi? <a href="contact.html" style="color: var(--primary); font-weight: 500;">Contattaci direttamente</a></p>
+        </div>
+    </section>
+
+    <!-- FAQ CONTENT -->
+    <section id="faq-content">
+        <div class="section-title">
+            <h2>Tutte le Domande Frequenti</h2>
+        </div>
+        
+        <!-- FAQ Navigation -->
+        <div class="faq-nav">
+            <button class="faq-nav-btn active" data-category="all">Tutte le Domande</button>
+            <button class="faq-nav-btn" data-category="products">Prodotti</button>
+            <button class="faq-nav-btn" data-category="services">Servizi</button>
+            <button class="faq-nav-btn" data-category="care">Cura e Manutenzione</button>
+            <button class="faq-nav-btn" data-category="purchase">Acquisto e Consegna</button>
+        </div>
+        
+        <!-- ALL FAQS -->
+        <div class="faq-category visible" id="all">
+            <h2 class="category-title">Tutte le Domande</h2>
+            <div class="faq-container">
+                <!-- PRODUCTS FAQS -->
+                <div class="faq-item" data-category="products">
+                    <div class="faq-question">
+                        <h3>Come posso distinguere un tappeto persiano autentico da una riproduzione?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I tappeti persiani autentici presentano diverse caratteristiche distintive:</p>
+                        <p><strong>1. Nodo persiano:</strong> I tappeti persiani autentici utilizzano il nodo asimmetrico (nodo persiano o Senneh), mentre molte riproduzioni usano il nodo simmetrico (nodo turco).</p>
+                        <p><strong>2. Materiali naturali:</strong> Lana, seta e cotone di alta qualità, con coloranti naturali che creano sfumature uniche.</p>
+                        <p><strong>3. Disegno asimmetrico:</strong> I motivi non sono perfettamente simmetrici, dimostrando il lavoro manuale.</p>
+                        <p><strong>4. Firma dell'artigiano:</strong> Molti tappeti persiani autentici portano la firma del tessitore o della regione di provenienza.</p>
+                        <p>Tutti i nostri tappeti sono accompagnati da un certificato di autenticità che ne attesta l'origine e le caratteristiche.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="products">
+                    <div class="faq-question">
+                        <h3>Qual è la differenza tra un tappeto di lana e uno di seta?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La scelta tra lana e seta dipende dalle tue esigenze e preferenze:</p>
+                        <p><strong>Tappeti di lana:</strong></p>
+                        <ul>
+                            <li>Più resistenti e durevoli</li>
+                            <li>Ideali per aree ad alto traffico</li>
+                            <li>Più facili da pulire e mantenere</li>
+                            <li>Generalmente più economici</li>
+                            <li>Morbidi e caldi al tatto</li>
+                        </ul>
+                        <p><strong>Tappeti di seta:</strong></p>
+                        <ul>
+                            <li>Lucidità e brillantezza eccezionali</li>
+                            <li>Dettagli finissimi nei disegni</li>
+                            <li>Più delicati, richiedono maggiore cura</li>
+                            <li>Ideali per aree decorative a basso traffico</li>
+                            <li>Considerati di lusso e di maggior valore</li>
+                        </ul>
+                        <p>Molti tappeti di alta qualità combinano lana per lo sfondo e seta per i dettagli, offrendo il meglio di entrambi i materiali.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="products">
+                    <div class="faq-question">
+                        <h3>Quanto durano i tappeti orientali autentici?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Con la cura appropriata, un tappeto orientale autentico può durare diverse generazioni:</p>
+                        <p><strong>Tappeti di lana di alta qualità:</strong> 50-100 anni o più</p>
+                        <p><strong>Tappeti di seta:</strong> 100+ anni se conservati correttamente</p>
+                        <p><strong>Fattori che influenzano la durata:</strong></p>
+                        <ul>
+                            <li>Qualità dei materiali</li>
+                            <li>Densità dei nodi</li>
+                            <li>Manutenzione regolare</li>
+                            <li>Esposizione alla luce solare</li>
+                            <li>Traffico pedonale</li>
+                        </ul>
+                        <p>Abbiamo tappeti nel nostro negozio che hanno oltre 80 anni e sono ancora in condizioni eccellenti, dimostrando la longevità di questi capolavori artigianali.</p>
+                    </div>
+                </div>
+                
+                <!-- SERVICES FAQS -->
+                <div class="faq-item" data-category="services">
+                    <div class="faq-question">
+                        <h3>Offrite servizi di restauro per tappeti antichi?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sì, offriamo servizi di restauro completi per tappeti antichi e di valore. Il nostro team di esperti restauratori ha oltre 30 anni di esperienza nel:</p>
+                        <ul>
+                            <li><strong>Riparazione di danni:</strong> Buchi, strappi, usura eccessiva</li>
+                            <li><strong>Rinforzo bordi e frange:</strong> Le aree più soggette a usura</li>
+                            <li><strong>Ricolorazione:</strong> Ripristino dei colori originali con tinture naturali</li>
+                            <li><strong>Consolidamento struttura:</strong> Rinforzo della trama e dell'ordito</li>
+                            <li><strong>Restauro conservativo:</strong> Per tappeti di valore museale</li>
+                        </ul>
+                        <p>Prima di qualsiasi intervento, effettuiamo una valutazione approfondita e forniamo un preventivo dettagliato. Il processo di restauro può richiedere da poche settimane a diversi mesi, a seconda dell'entità del lavoro necessario.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="services">
+                    <div class="faq-question">
+                        <h3>Come funziona il servizio di valutazione?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Il nostro servizio di valutazione professionale include:</p>
+                        <p><strong>1. Analisi visiva:</strong> Esame di design, colori e stile per determinare la regione di origine e l'età approssimativa.</p>
+                        <p><strong>2. Ispezione tattile:</strong> Valutazione della qualità della lana/seta, densità dei nodi e condizioni generali.</p>
+                        <p><strong>3. Esame del rovescio:</strong> Analisi della struttura, dei nodi e della simmetria del disegno.</p>
+                        <p><strong>4. Identificazione del periodo:</strong> Determinazione dell'epoca di produzione in base alle caratteristiche tecniche e stilistiche.</p>
+                        <p><strong>5. Stima del valore:</strong> Considerando età, condizioni, rarità, qualità artistica e domanda di mercato.</p>
+                        <p>Forniamo un certificato di valutazione dettagliato che può essere utilizzato per assicurazioni, vendite o successioni. Il servizio ha un costo che varia in base alla complessità della valutazione.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="services">
+                    <div class="faq-question">
+                        <h3>Fate consulenze per la scelta del tappeto perfetto?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Assolutamente sì! La nostra consulenza personalizzata è uno dei nostri servizi più apprezzati. Durante la consulenza consideriamo:</p>
+                        <ul>
+                            <li><strong>Spazio e dimensioni:</strong> Analisi dell'ambiente e misurazioni precise</li>
+                            <li><strong>Stile di arredamento:</strong> Abbinamento con mobili e decorazioni esistenti</li>
+                            <li><strong>Esigenze pratiche:</strong> Traffico, presenza di bambini o animali domestici</li>
+                            <li><strong>Budget:</strong> Proposte che rispettano il tuo investimento</li>
+                            <li><strong>Preferenze personali:</strong> Colori, motivi e texture che rispecchiano il tuo gusto</li>
+                        </ul>
+                        <p>Offriamo consulenze sia nel nostro showroom che a domicilio. Portiamo campioni di tappeti direttamente a casa tua per vedere come si integrano con il tuo ambiente. La consulenza è completamente gratuita e senza impegno.</p>
+                    </div>
+                </div>
+                
+                <!-- CARE FAQS -->
+                <div class="faq-item" data-category="care">
+                    <div class="faq-question">
+                        <h3>Come devo pulire e mantenere il mio tappeto orientale?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La corretta manutenzione prolunga notevolmente la vita del tuo tappeto:</p>
+                        <p><strong>Manutenzione giornaliera:</strong></p>
+                        <ul>
+                            <li>Aspirare regolarmente (senza spazzole rotanti)</li>
+                            <li>Ruotare il tappeto ogni 6-12 mesi per usura uniforme</li>
+                            <li>Proteggere dalla luce solare diretta</li>
+                        </ul>
+                        <p><strong>Pulizia professionale:</strong></p>
+                        <ul>
+                            <li>Consigliata ogni 12-24 mesi a seconda dell'uso</li>
+                            <li>Utilizziamo metodi delicati e prodotti specifici</li>
+                            <li>Asciugatura controllata per prevenire danni</li>
+                        </ul>
+                        <p><strong>In caso di macchie:</strong></p>
+                        <ul>
+                            <li>Agire immediatamente</li>
+                            <li>Assorbire senza strofinare</li>
+                            <li>Utilizzare detergenti specifici per tappeti</li>
+                            <li>Contattarci per macchie difficili</li>
+                        </ul>
+                        <p>Offriamo un servizio di manutenzione completo che include pulizia, trattamento antiparassitario e riparazioni minori.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="care">
+                    <div class="faq-question">
+                        <h3>Come posso prevenire danni da tarme e parassiti?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Le tarme sono il nemico numero uno dei tappeti di lana. Ecco come prevenirle:</p>
+                        <p><strong>Prevenzione attiva:</strong></p>
+                        <ul>
+                            <li>Aspirare regolarmente, soprattutto sotto i mobili</li>
+                            <li>Controllare periodicamente i bordi e il rovescio</li>
+                            <li>Utilizzare repellenti naturali come cedro o lavanda</li>
+                            <li>Far arieggiare il tappeto periodicamente</li>
+                        </ul>
+                        <p><strong>Segni di infestazione:</strong></p>
+                        <ul>
+                            <li>Presenza di piccoli buchi nel tappeto</li>
+                            <li>Larve o bozzoli visibili</li>
+                            <li>Polvere fine (escrementi) sotto il tappeto</li>
+                        </ul>
+                        <p><strong>Trattamento professionale:</strong></p>
+                        <ul>
+                            <li>Disinfestazione con prodotti specifici</li>
+                            <li>Congelamento controllato (per tappeti molto delicati)</li>
+                            <li>Trattamento preventivo annuale</li>
+                        </ul>
+                        <p>Offriamo un servizio di controllo e trattamento antiparassitario che protegge il tuo tappeto per almeno 12 mesi.</p>
+                    </div>
+                </div>
+                
+                <!-- PURCHASE FAQS -->
+                <div class="faq-item" data-category="purchase">
+                    <div class="faq-question">
+                        <h3>Quali sono le opzioni di pagamento disponibili?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Offriamo diverse opzioni di pagamento per rendere l'acquisto il più conveniente possibile:</p>
+                        <p><strong>Pagamento immediato:</strong></p>
+                        <ul>
+                            <li>Contanti</li>
+                            <li>Carta di credito/debito (Visa, MasterCard, American Express)</li>
+                            <li>Bonifico bancario</li>
+                            <li>Assegno (previa verifica)</li>
+                        </ul>
+                        <p><strong>Finanziamento:</strong></p>
+                        <ul>
+                            <li>Rateizzazione fino a 36 mesi</li>
+                            <li>Acconto del 30% e saldo rateale</li>
+                            <li>Tassi agevolati per acquisti superiori a €5.000</li>
+                            <li>Approvazione finanziaria in 24-48 ore</li>
+                        </ul>
+                        <p><strong>Pagamento sicuro online:</strong></p>
+                        <ul>
+                            <li>Transazioni protette con crittografia SSL</li>
+                            <li>PayPal e altri sistemi di pagamento digitale</li>
+                        </ul>
+                        <p>Per importi superiori a €10.000, possiamo strutturare piani di pagamento personalizzati. Contattaci per discutere le opzioni disponibili.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="purchase">
+                    <div class="faq-question">
+                        <h3>Offrite servizi di consegna e installazione?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sì, offriamo un servizio completo di consegna e installazione:</p>
+                        <p><strong>Consegna:</strong></p>
+                        <ul>
+                            <li><strong>Ancona e provincia:</strong> Consegna gratuita</li>
+                            <li><strong>Resto d'Italia:</strong> Costi variabili in base alla distanza</li>
+                            <li><strong>Imballaggio professionale:</strong> Protezione ottimale durante il trasporto</li>
+                            <li><strong>Assicurazione:</strong> Copertura completa fino alla consegna</li>
+                        </ul>
+                        <p><strong>Installazione:</strong></p>
+                        <ul>
+                            <li>Posizionamento preciso secondo le tue indicazioni</li>
+                            <li>Utilizzo di sottotappeti per una migliore stabilità</li>
+                            <li>Consigli per la corretta disposizione</li>
+                            <li>Assistenza post-vendita</li>
+                        </ul>
+                        <p><strong>Tempi di consegna:</strong></p>
+                        <ul>
+                            <li>In stock: 3-5 giorni lavorativi</li>
+                            <li>Su ordinazione: 4-8 settimane</li>
+                            <li>Restauri: 2-12 settimane (dipende dal lavoro)</li>
+                        </ul>
+                        <p>Per consegne internazionali, contattaci per un preventivo personalizzato.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-category="purchase">
+                    <div class="faq-question">
+                        <h3>Qual è la politica di reso e garanzia?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La tua soddisfazione è la nostra priorità:</p>
+                        <p><strong>Garanzia:</strong></p>
+                        <ul>
+                            <li><strong>Autenticità:</strong> Garanzia a vita sull'autenticità del tappeto</li>
+                            <li><strong>Materiali:</strong> 5 anni su difetti di materiali e manifattura</li>
+                            <li><strong>Restauro:</strong> 2 anni sui lavori di restauro effettuati</li>
+                        </ul>
+                        <p><strong>Resi:</strong></p>
+                        <ul>
+                            <li><strong>Periodo di recesso:</strong> 14 giorni per acquisti online</li>
+                            <li><strong>Condizioni:</strong> Tappeto deve essere in condizioni originali</li>
+                            <li><strong>Costi di reso:</strong> A carico del cliente, tranne in caso di errore nostro</li>
+                            <li><strong>Rimborso:</strong> Entro 14 giorni dall'ricezione del reso</li>
+                        </ul>
+                        <p><strong>Eccezioni:</strong></p>
+                        <ul>
+                            <li>Tappeti personalizzati o su misura non sono rimborsabili</li>
+                            <li>Tappeti antichi sono venduti "as is" con documentazione completa</li>
+                            <li>Servizi di restauro non sono rimborsabili una volta iniziati</li>
+                        </ul>
+                        <p>Offriamo sempre la possibilità di vedere il tappeto nel tuo ambiente prima dell'acquisto definitivo per evitare spiacevoli sorprese.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PRODUCTS CATEGORY -->
+        <div class="faq-category" id="products">
+            <h2 class="category-title">Prodotti</h2>
+            <div class="faq-container">
+                <!-- Products FAQs will be filtered here -->
+            </div>
+        </div>
+        
+        <!-- SERVICES CATEGORY -->
+        <div class="faq-category" id="services">
+            <h2 class="category-title">Servizi</h2>
+            <div class="faq-container">
+                <!-- Services FAQs will be filtered here -->
+            </div>
+        </div>
+        
+        <!-- CARE CATEGORY -->
+        <div class="faq-category" id="care">
+            <h2 class="category-title">Cura e Manutenzione</h2>
+            <div class="faq-container">
+                <!-- Care FAQs will be filtered here -->
+            </div>
+        </div>
+        
+        <!-- PURCHASE CATEGORY -->
+        <div class="faq-category" id="purchase">
+            <h2 class="category-title">Acquisto e Consegna</h2>
+            <div class="faq-container">
+                <!-- Purchase FAQs will be filtered here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK HELP -->
+    <section>
+        <div class="section-title">
+            <h2>Hai Ancora Domande?</h2>
+        </div>
+        <div class="quick-help">
+            <div class="help-card">
+                <div class="help-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Chiamaci</h3>
+                <p>Parla direttamente con i nostri esperti</p>
+                <p><strong>+39 071 206036</strong></p>
+            </div>
+            <div class="help-card">
+                <div class="help-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Scrivici</h3>
+                <p>Risponderemo entro 24 ore</p>
+                <p><strong>info@aliestekicarpets.com</strong></p>
+            </div>
+            <div class="help-card">
+                <div class="help-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Visita il Negozio</h3>
+                <p>Vieni a trovarci nel nostro showroom</p>
+                <p><strong>Via Marconi 2, Ancona</strong></p>
+            </div>
+            <div class="help-card">
+                <div class="help-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3>Prenota una Consulenza</h3>
+                <p>Appuntamento personalizzato gratuito</p>
+                <a href="contact.html" class="btn" style="margin-top: 1rem;">Prenota Ora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact-cta">
+        <div class="cta-content">
+            <h2>Non Hai Trovato la Risposta che Cercavi?</h2>
+            <p>Il nostro team di esperti è a tua disposizione per qualsiasi domanda sui tappeti orientali. Contattaci per una consulenza personalizzata.</p>
+            <a href="contact.html" class="btn btn-gold">Contattaci Oggi</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Ali Esteki Carpets</h3>
+                <p>Da oltre quarant'anni, portiamo l'arte e la tradizione dei tappeti orientali in Italia, con passione e competenza.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Link Veloci</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="products.html">Prodotti</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Servizi</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html">Vendita Tappeti</a></li>
+                    <li><a href="services.html">Restauro</a></li>
+                    <li><a href="services.html">Pulizia Professionale</a></li>
+                    <li><a href="services.html">Valutazione</a></li>
+                    <li><a href="services.html">Consulenza</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contatti</h3>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Via Guglielmo Marconi, 2, 60125 Ancona AN, Italia</p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <p>+39 071 206036</p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@aliestekicarpets.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Ali Esteki Carpets. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeMenu = document.getElementById('closeMenu');
+        const overlay = document.getElementById('overlay');
+
+        mobileMenu.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenu.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        overlay.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-nav a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // FAQ Navigation
+        const faqNavBtns = document.querySelectorAll('.faq-nav-btn');
+        const faqCategories = document.querySelectorAll('.faq-category');
+        
+        faqNavBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                faqNavBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const category = btn.getAttribute('data-category');
+                
+                // Hide all categories
+                faqCategories.forEach(cat => {
+                    cat.classList.remove('visible');
+                    // Reset all FAQ items to default state
+                    const items = cat.querySelectorAll('.faq-item');
+                    items.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                });
+                
+                // Show selected category
+                if (category === 'all') {
+                    faqCategories.forEach(cat => {
+                        if (cat.id === 'all') {
+                            cat.classList.add('visible');
+                        }
+                    });
+                } else {
+                    const targetCategory = document.getElementById(category);
+                    if (targetCategory) {
+                        targetCategory.classList.add('visible');
+                    }
+                }
+                
+                // Trigger scroll animations for newly visible elements
+                setTimeout(handleScroll, 100);
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    // Highlight matching text
+                    highlightText(item, searchTerm);
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        function highlightText(element, searchTerm) {
+            if (!searchTerm) return;
+            
+            const question = element.querySelector('.faq-question h3');
+            const answer = element.querySelector('.faq-answer');
+            
+            // Remove existing highlights
+            question.innerHTML = question.textContent;
+            answer.innerHTML = answer.textContent;
+            
+            // Highlight in question
+            const questionText = question.textContent;
+            const highlightedQuestion = questionText.replace(
+                new RegExp(searchTerm, 'gi'),
+                match => `<mark style="background-color: ${getRandomColor()}">${match}</mark>`
+            );
+            question.innerHTML = highlightedQuestion;
+            
+            // Highlight in answer
+            const answerText = answer.textContent;
+            const highlightedAnswer = answerText.replace(
+                new RegExp(searchTerm, 'gi'),
+                match => `<mark style="background-color: ${getRandomColor()}">${match}</mark>`
+            );
+            answer.innerHTML = highlightedAnswer;
+        }
+
+        function getRandomColor() {
+            const colors = ['#FFEAA7', '#FDECB2', '#F8EFB4', '#F5E8A5'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Scroll animations
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                rect.bottom >= 0
+            );
+        }
+
+        function handleScroll() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const helpCards = document.querySelectorAll('.help-card');
+            const faqCategories = document.querySelectorAll('.faq-category');
+            
+            faqItems.forEach(item => {
+                if (isElementInViewport(item)) {
+                    item.classList.add('visible');
+                }
+            });
+            
+            helpCards.forEach(card => {
+                if (isElementInViewport(card)) {
+                    card.classList.add('visible');
+                }
+            });
+            
+            faqCategories.forEach(category => {
+                if (isElementInViewport(category)) {
+                    category.classList.add('visible');
+                }
+            });
+        }
+
+        // Initial check
+        window.addEventListener('load', handleScroll);
+        // Check on scroll
+        window.addEventListener('scroll', handleScroll);
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.padding = '0.5rem 2rem';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.padding = '1rem 2rem';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.2)';
+            }
+        });
+    </script>
+</body>
+</html>
