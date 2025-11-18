@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restauro Lavaggio Tappeti - Pulizia Professionale di Tappeti e Moquette</title>
+    <style>
+        /* Reset e stili generali */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #000000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            max-width: 220px;
+            transition: transform 0.3s;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+        }
+        
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffd700;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://miro.medium.com/v2/resize:fit:740/1*NJyxWpeqxyaqOWNIUHq3Nw.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 150px 0;
+            position: relative;
+        }
+        
+        .hero-content {
+            animation: fadeIn 1.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #000000;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            border: 2px solid #ffd700;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: #ffd700;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        /* Servizi */
+        .servizi {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #000000;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: #ffd700;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .servizi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        
+        .servizio-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            position: relative;
+        }
+        
+        .servizio-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .servizio-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s;
+        }
+        
+        .servizio-card:hover .servizio-img {
+            transform: scale(1.05);
+        }
+        
+        .servizio-content {
+            padding: 25px;
+            position: relative;
+        }
+        
+        .servizio-content h3 {
+            margin-bottom: 15px;
+            color: #000000;
+            font-size: 1.4rem;
+        }
+        
+        .servizio-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .servizio-link {
+            color: #000000;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .servizio-link:hover {
+            color: #ffd700;
+        }
+        
+        .servizio-link::after {
+            content: '→';
+            margin-left: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .servizio-link:hover::after {
+            transform: translateX(5px);
+        }
+        
+        /* Galleria */
+        .galleria {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+        
+        .galleria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .galleria-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+        }
+        
+        .galleria-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .galleria-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .galleria-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Perché Sceglierci */
+        .perche-sceglierci {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: white;
+        }
+        
+        .perche-sceglierci .section-title h2 {
+            color: white;
+        }
+        
+        .perche-sceglierci .section-title p {
+            color: #ddd;
+        }
+        
+        .vantaggi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .vantaggio {
+            text-align: center;
+            padding: 40px 25px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .vantaggio:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .vantaggio i {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .vantaggio h3 {
+            margin-bottom: 15px;
+            color: #ffd700;
+            font-size: 1.4rem;
+        }
+        
+        .vantaggio p {
+            color: #ddd;
+            line-height: 1.7;
+        }
+        
+        /* Contatti */
+        .contatti {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .contatti-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .info-contatti {
+            margin-bottom: 30px;
+        }
+        
+        .info-contatti h3 {
+            margin-bottom: 25px;
+            color: #000000;
+            font-size: 1.6rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .info-contatti h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #ffd700;
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .info-contatto {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: #ffd700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .info-text h4 {
+            margin-bottom: 5px;
+            color: #000000;
+        }
+        
+        .info-text p {
+            color: #666;
+        }
+        
+        .form-contatti {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-contatti input,
+        .form-contatti textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-contatti input:focus,
+        .form-contatti textarea:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+            outline: none;
+        }
+        
+        .form-contatti textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-invia {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            width: 100%;
+        }
+        
+        .btn-invia:hover {
+            background-color: #ffd700;
+            color: #000000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: #ffd700;
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .footer-logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            max-width: 100%;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-col p {
+            color: #aaa;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: #ffd700;
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #ffd700;
+            color: #000000;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #ffd700;
+            color: #000000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #000000;
+            color: #ffd700;
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .servizi-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero {
+                padding: 100px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .servizi-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .galleria-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.jpeg" alt="Restauro Lavaggio Tappeti">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About us.html">Chi Siamo</a></li>
+                        <li><a href="Prodotti.html">Prodotti</a></li>
+                        <li><a href="lavaggio e restauro.html">Lavaggio e Restauro</a></li>
+                        <li><a href="contact.html">Contatti</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="offerte.html">Offerte</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Restauro e Lavaggio Professionale di Tappeti</h1>
+                <p>Riportiamo alla luce la bellezza dei tuoi tappeti con tecniche all'avanguardia e prodotti ecologici. Servizi professionali per privati e aziende.</p>
+                <a href="#contatti" class="btn">Richiedi un Preventivo Gratuito</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi -->
+    <section class="servizi" id="servizi">
+        <div class="container">
+            <div class="section-title">
+                <h2>I Nostri Servizi</h2>
+                <p>Offriamo una gamma completa di servizi per la cura e il restauro dei tuoi tappeti</p>
+            </div>
+            <div class="servizi-grid">
+                <div class="servizio-card">
+                    <div class="servizio-img" style="background-image: url('https://adamellotappeti.it/wp-content/uploads/2019/09/guide-to-washing-carpet-at-home-Copy.jpg');"></div>
+                    <div class="servizio-content">
+                        <h3>Lavaggio Tappeti</h3>
+                        <p>Pulizia profonda con macchinari professionali che rimuovono sporco, acari e batteri senza danneggiare le fibre. Utilizziamo prodotti ecologici e sicuri.</p>
+                        <a href="#" class="servizio-link">Scopri di più</a>
+                    </div>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-img" style="background-image: url('https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/495498420_3793951647484147_2567360856180353389_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=18W9fAHcY1cQ7kNvwGbRIH1&_nc_oc=Adlj8uGLLjbeVamX--7fG_VYdu2MTJstRFYGnHqmDq5x1qvFUqWutgT8ad1IIUcK7Fg&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=aBMqsC45JR9IEeGtK6NZnw&oh=00_AfizAH0aJiCQGRmh82iRleW_0EJbVdESEAhEjLyiFXcWdA&oe=691FF592');"></div>
+                    <div class="servizio-content">
+                        <h3>Restauro Tappeti Antichi</h3>
+                        <p>Recuperiamo e restauriamo tappeti di valore con tecniche tradizionali e grande attenzione ai dettagli. Ripristiniamo tappeti danneggiati dal tempo e dall'usura.</p>
+                        <a href="#" class="servizio-link">Scopri di più</a>
+                    </div>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-img" style="background-image: url('https://tse1.mm.bing.net/th/id/OIP.eRJvfOKXPmJYg8OonuwT_AHaE8?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3');"></div>
+                    <div class="servizio-content">
+                        <h3>Lavaggio Moquette</h3>
+                        <p>Pulizia professionale di moquette e tappezzerie con prodotti specifici per ogni tipo di fibra. Rimozione di macchie difficili e igienizzazione profonda.</p>
+                        <a href="#" class="servizio-link">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galleria -->
+    <section class="galleria">
+        <div class="container">
+            <div class="section-title">
+                <h2>La Nostra Galleria</h2>
+                <p>Alcuni esempi dei nostri lavori di restauro e lavaggio</p>
+            </div>
+            <div class="galleria-grid">
+                <div class="galleria-item">
+                    <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t1.6435-9/52927566_2145369475675714_5024651702372925440_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=BIAIJh32Pu8Q7kNvwFGLELI&_nc_oc=AdkSOmpIGnLn2_m2jZubNjDJeBagQcC3QAw4L90KZPU2nF_SKDkb9wp5z9hZzrhldVA&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=k9Qyt3-L9N0kxARgXO28Yw&oh=00_Afi0EL4DXcFnHQnGeKsGGCW__30zu9NQvCdVadBdRAScKw&oe=6941B6E8" alt="Lavoro di restauro 1">
+                </div>
+                <div class="galleria-item">
+                    <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/495567316_3793951364150842_5016137914062506969_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=i7jUiaxnsU4Q7kNvwHl1oQw&_nc_oc=AdmvULqUzgc3l0i3t_EWJVnkiKJ4uNPB7ItBB-yH3r6qlXm0TCMVV6IUHO1WOPkV-JI&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=qI3Gi1eW8VuC5PITdhRIZg&oh=00_Afh3ST4Nn68ONXSoOfVPXhGnMlhYiMUmHhjud2GyzW6qEA&oe=692001DA" alt="Lavoro di restauro 2">
+                </div>
+                <div class="galleria-item">
+                    <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/495498420_3793951647484147_2567360856180353389_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=18W9fAHcY1cQ7kNvwGbRIH1&_nc_oc=Adlj8uGLLjbeVamX--7fG_VYdu2MTJstRFYGnHqmDq5x1qvFUqWutgT8ad1IIUcK7Fg&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=aBMqsC45JR9IEeGtK6NZnw&oh=00_AfizAH0aJiCQGRmh82iRleW_0EJbVdESEAhEjLyiFXcWdA&oe=691FF592" alt="Lavoro di restauro 3">
+                </div>
+                <div class="galleria-item">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.2QbBiR19dIN6Xw0KSBqs7AHaE6?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Lavoro di restauro 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perché Sceglierci -->
+    <section class="perche-sceglierci" id="perche-sceglierci">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perché Scegliere Restauro Lavaggio Tappeti</h2>
+                <p>Eccellenza e professionalità al servizio dei tuoi tappeti</p>
+            </div>
+            <div class="vantaggi">
+                <div class="vantaggio">
+                    <i>🔬</i>
+                    <h3>Tecnologia Avanzata</h3>
+                    <p>Utilizziamo macchinari all'avanguardia e prodotti ecologici per risultati impeccabili e duraturi.</p>
+                </div>
+                <div class="vantaggio">
+                    <i>👨‍🔧</i>
+                    <h3>Esperienza e Professionalità</h3>
+                    <p>Team specializzato con anni di esperienza nel settore del restauro e lavaggio tappeti.</p>
+                </div>
+                <div class="vantaggio">
+                    <i>🚚</i>
+                    <h3>Servizio a Domicilio</h3>
+                    <p>Ritiro e consegna a domicilio in tutta la città per la massima comodità dei nostri clienti.</p>
+                </div>
+                <div class="vantaggio">
+                    <i>💯</i>
+                    <h3>Garanzia Soddisfazione</h3>
+                    <p>Risultati garantiti e massima trasparenza nei preventivi e nelle lavorazioni.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section class="contatti" id="contatti">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contattaci</h2>
+                <p>Richiedi un preventivo gratuito e senza impegno</p>
+            </div>
+            <div class="contatti-content">
+                <div class="info-contatti">
+                    <h3>Informazioni di Contatto</h3>
+                    <div class="info-contatto">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h4>Telefono</h4>
+                            <p>+39 0123 456789</p>
+                        </div>
+                    </div>
+                    <div class="info-contatto">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-text">
+                            <h4>Email</h4>
+                            <p>info@restaurolavaggiotappeti.it</p>
+                        </div>
+                    </div>
+                    <div class="info-contatto">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4>Indirizzo</h4>
+                            <p>Via dei Tappeti, 123 - 00100 Roma (RM)</p>
+                        </div>
+                    </div>
+                    <div class="info-contatto">
+                        <div class="info-icon">🕒</div>
+                        <div class="info-text">
+                            <h4>Orari</h4>
+                            <p>Lun-Ven: 8:00-19:00 | Sab: 8:00-13:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-contatti">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nome e Cognome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Descrivi il tuo tappeto e le tue esigenze" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-invia">Invia Richiesta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo.jpeg" alt="Restauro Lavaggio Tappeti">
+                    </div>
+                    <p>Servizi professionali di lavaggio e restauro tappeti per privati e aziende. Qualità, esperienza e risultati garantiti.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="https://www.instagram.com/aliestekicarpets/" aria-label="Instagram">ig</a>
+                        <a href="#" aria-label="tiktok">t</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Link Veloci</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About us.html">Chi Siamo</a></li>
+                        <li><a href="Prodotti.html">Prodotti</a></li>
+                        <li><a href="lavaggio e restauro.html">Lavaggio e Restauro</a></li>
+                        <li><a href="contact.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Servizi</h4>
+                    <ul class="footer-links">
+                        <li><a href="lavaggio e restauro.html">Lavaggio Tappeti</a></li>
+                        <li><a href="lavaggio e restauro.html">Restauro Tappeti Antichi</a></li>
+                        <li><a href="lavaggio e restauro.html">Lavaggio Moquette</a></li>
+                        <li><a href="lavaggio e restauro.html">Trattamento Antiacaro</a></li>
+                        <li><a href="lavaggio e restauro.html">Impermeabilizzazione</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contatti</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+390123456789">+39 0123 456789</a></li>
+                        <li><a href="mailto:info@restaurolavaggiotappeti.it"></a></li>
+                        <li><a href="#"> </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 1979 Aliesteki . Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Grazie per la tua richiesta! Ti contatteremo al più presto.');
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

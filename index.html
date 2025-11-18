@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Esteki Carpets - Tappeti Persiani d'Eccezione</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Votre CSS existant reste inchangé */
+        :root {
+            --primary: #000000;
+            --secondary: #000000;
+            --accent: #000000;
+            --light: #ffffff;
+            --dark: #000000;
+            --text: #000000;
+            --gold: #801a1a;
+            --logo-brown: #000000;
+            --logo-cream: #F5F5DC;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+        }
+        
+        /* LOADER UNICO E RARO */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--logo-cream) 0%, #f8f4e9 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), visibility 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .loader-logo {
+            width: 900px;
+            height: 900px;
+            background-image: url('https://static.wixstatic.com/media/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png/v1/fill/w_1110,h_638,al_c,q_90,enc_avif,quality_auto/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom: 40px;
+            animation: logoFloat 3s ease-in-out infinite, logoPulse 4s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(6, 91, 117, 0.3));
+        }
+        
+        .loader-text {
+            font-size: 1.3rem;
+            color: var(--logo-brown);
+            letter-spacing: 3px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            animation: textGlow 2.5s ease-in-out infinite alternate;
+            text-transform: uppercase;
+        }
+        
+        .loader-container {
+            width: 300px;
+            height: 8px;
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 0 10px rgba(10, 72, 109, 0.2);
+        }
+        
+        .loader-progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--logo-brown), #2d42a0, var(--logo-brown));
+            border-radius: 10px;
+            animation: loading 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards, progressShine 2s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loader-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: progressShimmer 1.5s ease-in-out infinite;
+        }
+        
+        .loader-persian-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(139, 69, 19, 0.1) 2px, transparent 2px);
+            background-size: 30px 30px;
+            opacity: 0.5;
+            animation: patternMove 20s linear infinite;
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(0.5deg); }
+            50% { transform: translateY(-5px) rotate(-0.5deg); }
+            75% { transform: translateY(-8px) rotate(0.3deg); }
+        }
+        
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+        
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 5px rgba(139, 69, 19, 0.3); }
+            100% { text-shadow: 0 0 15px rgba(139, 69, 19, 0.6), 0 0 20px rgba(139, 69, 19, 0.4); }
+        }
+        
+        @keyframes loading {
+            0% { width: 0%; }
+            20% { width: 25%; }
+            40% { width: 50%; }
+            60% { width: 75%; }
+            80% { width: 90%; }
+            100% { width: 100%; }
+        }
+        
+        @keyframes progressShine {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+        
+        @keyframes progressShimmer {
+            0% { left: -100%; }
+            100% { left: 200%; }
+        }
+        
+        @keyframes patternMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 30px 30px; }
+        }
+        
+        /* HEADER */
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 160px;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-left: 10px;
+            color: white;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--gold);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        /* MOBILE NAVIGATION */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background-color: var(--dark);
+            z-index: 999;
+            transition: right 0.4s ease;
+            padding: 100px 2rem 2rem;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+        }
+        
+        .mobile-nav li {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+        
+        .mobile-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-nav a:hover {
+            color: var(--gold);
+        }
+        
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.hali.com/wp-content/uploads/2018/11/TL1179A.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            animation: fadeUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-gold {
+            background-color: var(--gold);
+        }
+        
+        .btn-gold:hover {
+            background-color: #b8941f;
+        }
+        
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* SECTIONS */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            margin: 15px auto;
+        }
+        
+        /* ABOUT */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover {
+            transform: scale(1.03);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* PRODUCTS */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-info p {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* TESTIMONIALS */
+        .testimonials {
+            background-color: var(--dark);
+            color: white;
+            padding: 5rem 2rem;
+        }
+
+        .testimonials .section-title h2 {
+            color: white;
+        }
+
+        .testimonials .section-title::after {
+            background-color: var(--gold);
+        }
+
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            text-align: center;
+            padding: 2rem;
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .testimonial.active {
+            display: block;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .testimonial-dot.active {
+            background-color: white;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        /* CONTACT */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-detail i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 15px;
+            width: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--gold);
+            margin-top: 10px;
+        }
+        
+        .footer-column p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* NOUVELLE SECTION VIDÉO */
+        .video-section {
+            background-color: #f9f9f9;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        
+        .video-gallery {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-slider {
+            display: flex;
+            transition: transform 1s ease-in-out;
+            height: 600px;
+        }
+        
+        .video-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .video-slide iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 2rem;
+            text-align: left;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .video-slide:hover .video-overlay {
+            opacity: 1;
+        }
+        
+        .video-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .video-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+        
+        .video-control-btn {
+            background: var(--dark);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .video-control-btn:hover {
+            background: var(--gold);
+            transform: scale(1.1);
+        }
+        
+        .video-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 10px;
+        }
+        
+        .video-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .video-dot.active {
+            background-color: var(--gold);
+            transform: scale(1.2);
+        }
+        
+        /* ANIMATIONS POUR LES TRANSITIONS */
+        @keyframes slideInFromRight {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOutToLeft {
+            0% { transform: translateX(0); opacity: 1; }
+            100% { transform: translateX(-100%); opacity: 0; }
+        }
+        
+        @keyframes fadeInScale {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .slide-in-right {
+            animation: slideInFromRight 1s ease-out forwards;
+        }
+        
+        .slide-out-left {
+            animation: slideOutToLeft 1s ease-out forwards;
+        }
+        
+        .fade-in-scale {
+            animation: fadeInScale 1s ease-out forwards;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .header-container {
+                justify-content: space-between;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .video-slider {
+                height: 500px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .logo img {
+                height: 60px;
+            }
+            
+            .loader-logo {
+                width: 400px;
+                height: 150px;
+            }
+            
+            .video-slider {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
+            
+            .loader-logo {
+                width: 300px;
+                height: 120px;
+            }
+            
+            .loader-text {
+                font-size: 1.1rem;
+            }
+            
+            .video-slider {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+            
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                padding: 0 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+            
+            .loader-logo {
+                width: 250px;
+                height: 100px;
+            }
+            
+            .loader-text {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+            
+            .loader-container {
+                width: 250px;
+            }
+            
+            .video-slider {
+                height: 250px;
+            }
+            
+            .video-overlay {
+                padding: 1rem;
+            }
+            
+            .video-overlay h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- LOADER UNICO E RARO -->
+    <div id="loader">
+        <div class="loader-persian-pattern"></div>
+        <div class="loader-logo"></div>
+        <div class="loader-text">Caricamento dell'Arte Persiana</div>
+        <div class="loader-container">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://static.wixstatic.com/media/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png/v1/fill/w_1110,h_638,al_c,q_90,enc_avif,quality_auto/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png" alt="Ali Esteki Carpets Logo">
+                <div class="logo-text"></div>
+            </div>
+            <nav>
+                <ul>
+                     <li><a href="index.html">Home</a></li>
+                     <li><a href="About us.html">Chi Siamo</a></li>
+                     <li><a href="Prodotti.html"> Prodotti </a></li>
+                     <li><a href="lavaggio e restauro.html"> Lavaggio e restauro </a></li>
+                     <li><a href="contact.html">Contatti</a></li>
+                     <li><a href="faq.html"> Faq</a></li>
+                     <li><a href="offerte.html"> Offerte </a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About us.html">Chi Siamo</a></li>
+            <li><a href="Prodotti.html"> Prodotti </a></li>
+            <li><a href="lavaggio e restauro.html"> Lavaggio e restauro </a></li>
+            <li><a href="contact.html">Contatti</a></li>
+            <li><a href="faq.html"> Faq</a></li>
+            <li><a href="offerte.html"> Offerte </a></li>
+        </ul>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>L'Arte del Tappeto Orientale d'Eccellenza</h1>
+            <p>Scopri la nostra collezione esclusiva di tappeti persiani autentici, tessuti a mano da maestri artigiani secondo tradizioni secolari.</p>
+            <a href="contact.html" class="btn btn-gold"> Contattaci </a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="section-title">
+            <h2>Chi Siamo</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="entree.png" alt="Storia dei tappeti persiani">
+            </div>
+            <div class="about-text">
+                <h3>La Nostra Storia</h3>
+                <p>Da oltre quarant'anni Ali Esteki Carpets è un punto di riferimento ad Ancona per gli amanti dei tappeti orientali.</p>
+                <p>Proponiamo tappeti persiani, turchi, pakistani, indiani, afgani, caucasici, Aubusson, mongoli e molte altre rarità provenienti da tutto il mondo.</p>
+                <p>Ogni pezzo è unico e accompagnato da certificato di garanzia, sinonimo di autenticità e qualità.</p>
+                <p>Il più grande negozio di tappeti delle Marche ti aspetta ad Ancona, in Via Marconi 2.</p>
+                <a href="About us.html" class="btn">Scopri di Più</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOUVELLE SECTION VIDÉO -->
+    <section class="video-section" id="video-gallery">
+        <div class="section-title">
+            <h2>L'Arte dei Tappeti in Video</h2>
+        </div>
+        <div class="video-gallery">
+            <div class="video-slider" id="videoSlider">
+                <div class="video-slide active">
+                    <iframe src="https://www.youtube.com/embed/bE1Zykgv1pY?si=HGr5fQyrkgvodS_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="video-overlay">
+                        <h3>La Nostra Storia</h3>
+                        <p>Scopri la tradizione e la maestria dietro ogni tappeto Ali Esteki</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products">
+        <div class="section-title">
+            <h2>I Nostri Tappeti di Eccellenza</h2>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.4GJm6ItrT-E4gSzrd53MOgHaJ4?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Isfahan">
+                </div>
+                <div class="product-info">
+                    <h3>Tappeto Isfahan</h3>
+                    <p>Realizzato con seta e lana di prima qualità, caratterizzato da motivi floreali intricati.</p>
+                    <div class="product-price">€ 3.200</div>
+                    <a href="contact.html" class="btn">Richiedi Informazioni</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.eSmerjMww2IeN2StH1k-vQHaHX?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Tabriz">
+                </div>
+                <div class="product-info">
+                    <h3>Tappeto Tabriz</h3>
+                    <p>Design geometrico elegante, realizzato con lana pura e tinture naturali.</p>
+                    <div class="product-price">€ 2.800</div>
+                    <a href="contact.html" class="btn">Richiedi Informazioni</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.4e1fHTu6nGBUXgu3WZGlYAHaKz?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Kashan">
+                </div>
+                <div class="product-info">
+                    <h3>Tappeto Kashan</h3>
+                    <p>Motivi medaglione centrale su fondo rosso intenso, simbolo di prestigio e eleganza.</p>
+                    <div class="product-price">€ 4.500</div>
+                    <a href="contact.html" class="btn">Richiedi Informazioni</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://tse1.explicit.bing.net/th/id/OIP._mfUJXIcViR_2QlF6vGsVQHaLJ?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Heriz">
+                </div>
+                <div class="product-info">
+                    <h3>Tappeto Heriz</h3>
+                    <p>Design rustico e durevole, perfetto per ambienti moderni che cercano un tocco di tradizione.</p>
+                    <div class="product-price">€ 2.100</div>
+                    <a href="contact.html" class="btn">Richiedi Informazioni</a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="About us.html" class="btn"> Dal 1979 </a>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="section-title">
+            <h2>I Nostri Servizi</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-people-carry"></i>
+                </div>
+                <h3>Consulenza Personalizzata</h3>
+                <p>Ti aiutiamo a scegliere il tappeto perfetto per i tuoi spazi, considerando stile, dimensioni e budget.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Riparazione e Restauro</h3>
+                <p>Servizio specializzato per riparare e restaurare tappeti antichi, preservandone il valore e la bellezza.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Consegna e Installazione</h3>
+                <p>Consegna a domicilio in tutta Italia e installazione professionale del tuo tappeto.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="services.html" class="btn">Scopri Tutti i Nostri Servizi</a>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>Cosa Dicono i Nostri Clienti</h2>
+        </div>
+        <div class="testimonials-slider">
+            <div class="testimonial active">
+                <div class="testimonial-text">
+                    "Cercavamo qualcuno che potesse ridare vita ai nostri due tappeti persiani, e ci siamo affidati ad Ali.
+Ci è sembrato subito affidabile e molto esperto, si percepisce subito l'amore e la passione verso il suo lavoro.
+Ovviamente il risultato non ha deluso le nostre aspettative.
+Consigliato 👍🏼"
+                </div>
+                <div class="testimonial-author">- Clara Polverelli, Ancona</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    "Had two small Moroccan rugs cleaned for 140 Euros.  While the price was high, the cleaning was very good.  The rugs had about 20 years of traffic, were very dirty and stiff.  After cleaning the colors were brilliant and the wool soft and fragrant."
+                </div>
+                <div class="testimonial-author">- Reed Erskine, Ancona</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    "Tappeti stupendi e antichi"
+                </div>
+                <div class="testimonial-author">- Chiara Petrella, Ancona</div>
+            </div>
+            <div class="testimonial-controls">
+                <div class="testimonial-dot active" data-slide="0"></div>
+                <div class="testimonial-dot" data-slide="1"></div>
+                <div class="testimonial-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Ali Esteki Carpets</h3>
+                <p>Da oltre quarant'anni, portiamo l'arte e la tradizione dei tappeti orientali in Italia, con passione e competenza.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/aliestekicarpets/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/aliestekicarpets/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@TappetiPersiani"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Link Veloci</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="products.html">Prodotti</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Servizi</h3>
+                <ul class="footer-links">
+                    <li><a href="Prodotti.html">Vendita Tappeti</a></li>
+                    <li><a href="lavaggio e restauro.html">Restauro e lavaggio </a></li>
+                    <li><a href="services.html">Pulizia Professionale</a></li>
+                    <li><a href="faq.html"> Faq</a></li>
+                    <li><a href="offerte.html"> Offerte</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contatti</h3>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Via Guglielmo Marconi, 2, 60125 Ancona AN, Italia</p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                         <p>+39 071206036</p>
+                         <p>+39 3408105898</p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+        <!-- MAP -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.7030487255915!2d13.501741975561163!3d43.612724171103956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132d7f993a2f85ff%3A0x74092795d89cac0!2sAli%20Esteki%20Carpets!5e0!3m2!1sit!2sit!4v1762599965181!5m2!1sit!2sit" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 1979 Ali Esteki Carpets. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Loader con transizione unica
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            setTimeout(function() {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+                // Aggiungiamo una transizione di trasformazione unica
+                loader.style.transform = 'scale(1.5) rotate(5deg)';
+            }, 3500);
+        });
+
+        // Testimonials Slider
+        const dots = document.querySelectorAll('.testimonial-dot');
+        const testimonials = document.querySelectorAll('.testimonial');
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                testimonials.forEach(t => t.classList.remove('active'));
+                testimonials[index].classList.add('active');
+                dots.forEach(d => d.classList.remove('active'));
+                dots[index].classList.add('active');
+            });
+        });
+
+        // Auto testimonial slider
+        let currentTestimonial = 0;
+        function rotateTestimonials() {
+            testimonials.forEach(t => t.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            
+            testimonials[currentTestimonial].classList.add('active');
+            dots[currentTestimonial].classList.add('active');
+        }
+        
+        // Auto rotate testimonials every 5 seconds
+        setInterval(rotateTestimonials, 5000);
+
+        // VIDEO GALLERY FUNCTIONALITY
+        const videoSlider = document.getElementById('videoSlider');
+        const videoSlides = document.querySelectorAll('.video-slide');
+        const prevBtn = document.getElementById('prevVideo');
+        const nextBtn = document.getElementById('nextVideo');
+        const playPauseBtn = document.getElementById('playPauseVideo');
+        const videoDots = document.querySelectorAll('.video-dot');
+        
+        let currentVideoIndex = 0;
+        let isPlaying = true;
+        let videoInterval;
+        
+        // Initialize video gallery
+        function initVideoGallery() {
+            // Start auto-play
+            startVideoRotation();
+            
+            // Add event listeners
+            prevBtn.addEventListener('click', showPrevVideo);
+            nextBtn.addEventListener('click', showNextVideo);
+            playPauseBtn.addEventListener('click', togglePlayPause);
+            
+            // Add click events to dots
+            videoDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    showVideo(index);
+                });
+            });
+        }
+        
+        function showVideo(index) {
+            // Update current index
+            currentVideoIndex = index;
+            
+            // Move slider
+            videoSlider.style.transform = `translateX(-${currentVideoIndex * 100}%)`;
+            
+            // Update active dot
+            videoDots.forEach(dot => dot.classList.remove('active'));
+            videoDots[currentVideoIndex].classList.add('active');
+            
+            // Reset auto-play timer
+            if (isPlaying) {
+                clearInterval(videoInterval);
+                startVideoRotation();
+            }
+        }
+        
+        function showNextVideo() {
+            const nextIndex = (currentVideoIndex + 1) % videoSlides.length;
+            showVideo(nextIndex);
+        }
+        
+        function showPrevVideo() {
+            const prevIndex = (currentVideoIndex - 1 + videoSlides.length) % videoSlides.length;
+            showVideo(prevIndex);
+        }
+        
+        function startVideoRotation() {
+            if (isPlaying) {
+                videoInterval = setInterval(showNextVideo, 7000); // Change video every 7 seconds
+            }
+        }
+        
+        function togglePlayPause() {
+            isPlaying = !isPlaying;
+            
+            if (isPlaying) {
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                startVideoRotation();
+            } else {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                clearInterval(videoInterval);
+            }
+        }
+        
+        // Initialize video gallery when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initVideoGallery);
+
+        // Mobile Menu
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeMenu = document.getElementById('closeMenu');
+        const overlay = document.getElementById('overlay');
+
+        mobileMenu.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenu.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        overlay.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-nav a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.padding = '0.5rem 2rem';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.padding = '1rem 2rem';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.2)';
+            }
+        });
+    </script>
+</body>
+</html>
