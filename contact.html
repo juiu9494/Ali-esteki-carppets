@@ -15,6 +15,7 @@
             --dark: #000000;
             --text: #333333;
             --gold: #000000;
+            --whatsapp: #25D366;
         }
         
         * {
@@ -263,6 +264,18 @@
         .btn-gold:hover {
             background-color: #b8941f;
         }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
         
         @keyframes fadeUp {
             0% { opacity: 0; transform: translateY(30px); }
@@ -363,6 +376,18 @@
         .contact-card p {
             margin-bottom: 1rem;
             line-height: 1.6;
+        }
+
+        .whatsapp-card {
+            border: 2px solid var(--whatsapp);
+        }
+
+        .whatsapp-card::before {
+            background: linear-gradient(90deg, var(--whatsapp), #128C7E);
+        }
+
+        .whatsapp-card .contact-icon {
+            color: var(--whatsapp);
         }
         
         /* CONTACT CONTAINER */
@@ -678,6 +703,43 @@
             margin-bottom: 2rem;
             line-height: 1.6;
         }
+
+        /* WHATSAPP FLOATING BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(37, 211, 102, 0.8);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
         
         /* FOOTER */
         footer {
@@ -830,6 +892,13 @@
                 max-width: 100%;
                 margin-bottom: 1rem;
             }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -860,6 +929,12 @@
             
             .contact-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -939,13 +1014,15 @@
                 <p>+39 3408105898</p>
                 <p><strong>aliestekicarpets@gmail.com </strong></p>
             </div>
-            <div class="contact-card">
+            <div class="contact-card whatsapp-card">
                 <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fab fa-whatsapp"></i>
                 </div>
-                <h3>Inviaci un'Email</h3>
-                <p>Scrivici per informazioni dettagliate, foto aggiuntive o per fissare un appuntamento.</p>
-                <p><strong>aliestekicarpets@gmail.com</strong></p>
+                <h3>Scrivici su WhatsApp</h3>
+                <p>Contattaci tramite WhatsApp per una risposta rapida e immediata. Inviaci foto o domande sui nostri prodotti.</p>
+                <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20ai%20vostri%20tappeti%20orientali%20e%20vorrei%20maggiori%20informazioni." class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Scrivici su WhatsApp
+                </a>
             </div>
         </div>
     </section>
@@ -980,10 +1057,13 @@
                         </div>
                     </div>
                     <div class="contact-detail">
-                        <i class="fas fa-clock"></i>
+                        <i class="fab fa-whatsapp"></i>
                         <div class="contact-detail-content">
-                            <h4>Orari di Apertura</h4>
-                            <p>Visita la sezione sottostante per gli orari completi</p>
+                            <h4>WhatsApp</h4>
+                            <p>+39 3408105898</p>
+                            <a href="https://wa.me/393408105898" class="btn btn-whatsapp" style="padding: 8px 15px; font-size: 0.9rem; margin-top: 5px;">
+                                <i class="fab fa-whatsapp"></i> Invia Messaggio
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1066,7 +1146,10 @@
                 <h3>Ali Esteki Carpets</h3>
                 <p>Via Guglielmo Marconi, 2<br>60125 Ancona AN, Italia</p>
                 <p><strong>Telefono:</strong> +39 071 206036</p>
-                <p><strong>Email:</strong> info@aliestekicarpets.com</p>
+                <p><strong>Email:</strong> aliestekicarpets@gmail.com</p>
+                <a href="https://wa.me/393408105898" class="btn btn-whatsapp" style="margin-top: 10px; width: 100%;">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
             </div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.7030487255915!2d13.501741975561163!3d43.612724171103956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132d7f993a2f85ff%3A0x74092795d89cac0!2sAli%20Esteki%20Carpets!5e0!3m2!1sit!2sit!4v1762599965181!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
@@ -1122,9 +1205,19 @@
         <div class="cta-content">
             <h2>Pronto a Trasformare la Tua Casa?</h2>
             <p>Visita il nostro showroom ad Ancona e scopri la magia dei tappeti orientali. Il nostro team di esperti è a tua disposizione per aiutarti a trovare il tappeto perfetto che si adatti al tuo stile e al tuo budget.</p>
-            <a href="tel:+39071206036" class="btn btn-gold">Chiamaci Ora</a>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:+39071206036" class="btn btn-gold">Chiamaci Ora</a>
+                <a href="https://wa.me/393408105898" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
         </div>
     </section>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20ai%20vostri%20tappeti%20orientali%20e%20vorrei%20maggiori%20informazioni." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- FOOTER -->
     <footer>
@@ -1133,9 +1226,10 @@
                 <h3>Ali Esteki Carpets</h3>
                 <p>Da oltre quarant'anni, portiamo l'arte e la tradizione dei tappeti orientali in Italia, con passione e competenza.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/aliestekicarpets/"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/aliestekicarpets/"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.youtube.com/@TappetiPersiani"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/393408105898"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-column">
@@ -1171,7 +1265,10 @@
                         <p>+39 071206036</p>
                         <p>+39 3408105898</p>
                     </div>
-                  
+                    <div class="contact-detail">
+                        <i class="fab fa-whatsapp"></i>
+                        <p>WhatsApp: +39 3408105898</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1332,7 +1429,6 @@
         });
     </script>
 </body>
-
 </html>
 
 
