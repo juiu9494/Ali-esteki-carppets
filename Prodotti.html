@@ -9,11 +9,11 @@
     <style>
         :root {
             --black: #000000;
-            --white: #FFFFFF;
+            --white: #ffffff;
             --gray-dark: #1a1a1a;
             --gray-medium: #333333;
             --gray-light: #666666;
-            --gray-very-light: #f5f5f5;
+            --gray-very-light: #000000;
             --accent: #8B4513;
         }
         
@@ -63,9 +63,8 @@
         }
         
         .logo img {
-            height: 80px;
-            transition: all 0.3s ease;
-            filter: brightness(0) invert(1);
+            height: 250px; /* Logo plus grand */
+          
         }
         
         .logo-text {
@@ -250,6 +249,28 @@
         .btn-white:hover {
             background-color: transparent;
             color: var(--white);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 600;
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            color: white;
+            transform: translateY(-3px);
         }
         
         @keyframes fadeUp {
@@ -463,6 +484,7 @@
             text-align: center;
             padding: 10px;
             transition: all 0.3s;
+            text-decoration: none;
         }
         
         .btn-outline:hover {
@@ -686,6 +708,7 @@
             
             nav ul {
                 display: none;
+                width: 30px;
             }
             
             .mobile-menu {
@@ -739,6 +762,11 @@
                 border-radius: 4px;
                 width: 100%;
             }
+            
+            /* Logo plus grand sur mobile */
+            .logo img {
+                height: 100px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -747,7 +775,7 @@
             }
             
             .logo img {
-                height: 50px;
+                height: 90px; /* Logo encore plus grand sur mobile */
             }
             
             .hero-products {
@@ -774,9 +802,9 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="https://static.wixstatic.com/media/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png/v1/fill/w_1110,h_638,al_c,q_90,enc_avif,quality_auto/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png" alt="Ali Esteki Carpets Logo">
-                <div class="logo-text"></div>
+                <img src="https://static.wixstatic.com/media/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png/v1/fill/w_1110,h_638,al_c,q_90,enc_avif,quality_auto/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png" alt="Ali Esteki Carpets">
             </div>
+    
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -890,7 +918,9 @@
                     <p>Realizzato con seta e lana di prima qualità, caratterizzato da motivi floreali intricati su fondo blu intenso.</p>
                     <div class="product-price">€ 3.200</div>
                     <div class="product-actions">
-                        <a href="contact.html" class="btn-outline">Dettagli</a>
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Isfahan%20Blu%20Reale%20da%20€3.200" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
                         <button class="btn-favorite"><i class="far fa-heart"></i></button>
                     </div>
                 </div>
@@ -918,7 +948,9 @@
                     <p>Design geometrico elegante, realizzato con lana pura e tinture naturali. Perfetto per ambienti moderni.</p>
                     <div class="product-price">€ 2.800</div>
                     <div class="product-actions">
-                        <a href="contact.html" class="btn-outline">Dettagli</a>
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Anatolio%20Rosso%20da%20€2.800" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
                         <button class="btn-favorite"><i class="far fa-heart"></i></button>
                     </div>
                 </div>
@@ -941,13 +973,14 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <div class="product-category"></div>
-                    <h3>Tappeto nain </h3>
-                    <p>Tappeto Nain autentico, realizzato a mano in Iran secondo la tradizione persiana. Caratterizzato da un nodo finissimo, motivi floreali eleganti e l’inconfondibile combinazione di avorio e blu, è un pezzo pregiato che unisce raffinatezza e qualità artigianale. Perfetto per aggiungere un tocco di eleganza classica a qualsiasi ambiente.</p>
-
+                    <div class="product-category">Persiano</div>
+                    <h3>Tappeto Nain</h3>
+                    <p>Tappeto Nain autentico, realizzato a mano in Iran secondo la tradizione persiana. Caratterizzato da un nodo finissimo, motivi floreali eleganti e l'inconfondibile combinazione di avorio e blu.</p>
                     <div class="product-price">€ 1.900</div>
                     <div class="product-actions">
-                        <a href="contact.html" class="btn-outline">Dettagli</a>
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Nain%20da%20€1.900" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
                         <button class="btn-favorite"><i class="far fa-heart"></i></button>
                     </div>
                 </div>
@@ -970,13 +1003,14 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <div class="product-category"></div>
-                    <h3>Tappeto Kashan </h3>
-                   <p>Tappeto Kashan di alta qualità, annodato a mano in Iran con lana pregiata e trama in cotone. Celebre per i suoi motivi floreali simmetrici e il classico medaglione centrale, offre colori profondi e armoniosi come il rosso rubino e il blu intenso. Un pezzo intramontabile che porta eleganza e tradizione persiana in ogni ambiente.</p>
-
+                    <div class="product-category">Persiano</div>
+                    <h3>Tappeto Kashan</h3>
+                   <p>Tappeto Kashan di alta qualità, annodato a mano in Iran con lana pregiata e trama in cotone. Celebre per i suoi motivi floreali simmetrici e il classico medaglione centrale.</p>
                     <div class="product-price">€ 4.500</div>
                     <div class="product-actions">
-                        <a href="contact.html" class="btn-outline">Dettagli</a>
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Kashan%20da%20€4.500" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
                         <button class="btn-favorite"><i class="far fa-heart"></i></button>
                     </div>
                 </div>
@@ -1004,7 +1038,9 @@
                     <p>Tappeto vintage degli anni '50, in eccellenti condizioni. Colori naturali e disegno tradizionale.</p>
                     <div class="product-price">€ 5.200</div>
                     <div class="product-actions">
-                        <a href="contact.html" class="btn-outline">Dettagli</a>
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Kashan%20Antico%20da%20€5.200" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
                         <button class="btn-favorite"><i class="far fa-heart"></i></button>
                     </div>
                 </div>
@@ -1014,7 +1050,7 @@
             <div class="product-card">
                 <div class="product-image">
                     <img src="https://archivio.dimanoinmano.it/img/1206657/full/antiquariato/tappeti/tappeto-malayer-iran.jpg" alt="Tappeto Moderno Geometrico">
-                    <div class="product-badge"></div>
+                    <div class="product-badge">Antico</div>
                     <div class="product-rating">
                         <div class="star-rating">
                             <i class="fas fa-star active"></i>
@@ -1027,13 +1063,14 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <div class="product-category"></div>
+                    <div class="product-category">Persiano</div>
                     <h3>Tappeto Malayer Antico</h3>
-                    <p>Tappeto Malayer antico, annodato a mano nella regione dell'Azerbaijan iraniano, noto per i suoi motivi geometrici raffinati e per le tonalità calde e profonde. Realizzato con lana filata a mano e coloranti naturali, ogni pezzo è unico e racconta la tradizione artigianale delle tribù locali. Ideale per ambienti che cercano carattere, autenticità e fascino storico.</p>
-
+                    <p>Tappeto Malayer antico, annodato a mano nella regione dell'Azerbaijan iraniano, noto per i suoi motivi geometrici raffinati e per le tonalità calde e profonde.</p>
                     <div class="product-price">€ 1.500</div>
                     <div class="product-actions">
-                        <a href="contact.html" class="btn-outline">Dettagli</a>
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Malayer%20Antico%20da%20€1.500" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
                         <button class="btn-favorite"><i class="far fa-heart"></i></button>
                     </div>
                 </div>
@@ -1072,6 +1109,7 @@
                     <a href="https://www.instagram.com/aliestekicarpets/"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-tiktok"></i></a>
                     <a href="https://www.youtube.com/@TappetiPersiani"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/393408105898"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-column">
@@ -1237,6 +1275,4 @@
         }
     </script>
 </body>
-
 </html>
-
