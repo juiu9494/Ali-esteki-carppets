@@ -3,52 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Offerta Speciale - Restauro Lavaggio Tappeti</title>
+    <title>Prodotti - Ali Esteki Carpets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        /* Reset e stili generali */
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-dark: #1a1a1a;
+            --gray-medium: #333333;
+            --gray-light: #666666;
+            --gray-very-light: #000000;
+            --accent: #8B4513;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            line-height: 1.6;
-            color: #000000;
-            background-color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            color: var(--gray-medium);
+            background-color: var(--white);
+            overflow-x: hidden;
         }
         
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--black);
         }
         
-        /* Header */
+        /* HEADER */
         header {
-            background-color: #000000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
         
-        .header-content {
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
         }
         
         .logo {
-            max-width: 300px;
+            display: flex;
+            align-items: center;
         }
         
         .logo img {
-            max-width: 100%;
-            height: auto;
+            height: 250px; /* Logo plus grand */
+          
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-left: 10px;
+            color: var(--white);
         }
         
         nav ul {
@@ -56,813 +80,1199 @@
             list-style: none;
         }
         
-        nav ul li {
-            margin-left: 25px;
+        nav li {
+            margin-left: 2rem;
         }
         
-        nav ul li a {
+        nav a {
+            color: var(--white);
             text-decoration: none;
-            color: #ffffff;
             font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #e4d500;
-        }
-        
-        /* Timer Stylé */
-        .timer-section {
-            background: linear-gradient(135deg, #000000 0%, #333333 100%);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .timer-container {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timer-title {
-            color: #ffffff;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .timer-subtitle {
-            color: #e4d500;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .timer-unit {
-            background: linear-gradient(135deg, #e4d500, #ffed4e);
-            border-radius: 15px;
-            padding: 25px 15px;
-            min-width: 100px;
-            color: #000000;
-            box-shadow: 0 10px 20px rgba(228, 213, 0, 0.3);
+            transition: color 0.3s ease;
             position: relative;
-            overflow: hidden;
         }
-
-        .timer-unit::before {
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        nav a::after {
             content: '';
             position: absolute;
-            top: 0;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
             left: 0;
-            right: 0;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .timer-number {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .timer-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 3px;
-            overflow: hidden;
-            margin: 20px 0;
-        }
-
-        .progress {
-            height: 100%;
-            background: linear-gradient(90deg, #e4d500, #ffed4e);
-            width: 65%;
-            border-radius: 3px;
+            background-color: var(--accent);
             transition: width 0.3s ease;
         }
-
-        .offer-info {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
+        
+        nav a:hover::after {
+            width: 100%;
         }
-
-        .offer-text {
-            color: #ffffff;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
         }
-
-        .discount-badge {
-            display: inline-block;
-            background: #e4d500;
-            color: #000000;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-weight: bold;
+        
+        /* MOBILE NAVIGATION */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background-color: var(--black);
+            z-index: 999;
+            transition: right 0.4s ease;
+            padding: 100px 2rem 2rem;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+        }
+        
+        .mobile-nav li {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+        
+        .mobile-nav a {
+            color: var(--white);
+            text-decoration: none;
             font-size: 1.2rem;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .flashing {
-            animation: flash 1s infinite;
-        }
-
-        @keyframes flash {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        /* Banner Offerta */
-        .banner-offerta {
-            background: linear-gradient(135deg, #000000 0%, #333333 100%);
-            color: rgb(255, 255, 255);
-            text-align: center;
-            padding: 40px 0;
+            display: block;
+            transition: color 0.3s ease;
         }
         
-        .banner-offerta h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+        .mobile-nav a:hover {
+            color: var(--accent);
         }
         
-        .banner-offerta p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
         }
         
-        /* Offerta Principale */
-        .offerta-principale {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            background-color: rgb(255, 255, 255);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 50px auto;
-            max-width: 1200px;
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
         }
         
-        .offerta-testo {
-            flex: 1;
-            padding: 40px;
-            min-width: 300px;
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
         
-        .offerta-immagine {
-            flex: 1;
-            min-width: 300px;
-            height: 400px;
-            background-image: url('https://tse3.mm.bing.net/th/id/OIP.0NBNNXtr4i2Tl_np0s9upQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3');
+        /* HERO SECTION */
+        .hero-products {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600633349336-e2a5d4d7a1e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
-        }
-        
-        .prezzi {
             display: flex;
             align-items: center;
-            margin: 20px 0;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 2rem;
+            margin-top: 80px;
         }
         
-        .vecchio-prezzo {
-            font-size: 1.5rem;
-            color: #999;
-            text-decoration: line-through;
-            margin-right: 15px;
+        .hero-content {
+            max-width: 800px;
+            animation: fadeUp 1s ease-out;
         }
         
-        .nuovo-prezzo {
-            font-size: 2.5rem;
-            color: #000000;
-            font-weight: bold;
+        .hero-products h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
-        .badge-sconto {
-            display: inline-block;
-            background-color: #000000;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-left: 15px;
+        .hero-products p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
         
         .btn {
             display: inline-block;
-            background-color: #000000;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
+            padding: 12px 30px;
+            background-color: var(--black);
+            color: var(--white);
             text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            font-size: 1.1rem;
-            margin-top: 20px;
-            border: 2px solid #000000;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border: 2px solid var(--black);
         }
         
         .btn:hover {
-            background-color: #e4d500;
-            color: #000000;
+            background-color: transparent;
+            color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        .btn-grande {
-            padding: 18px 40px;
-            font-size: 1.2rem;
+        .btn-white {
+            background-color: var(--white);
+            color: var(--black);
+            border: 2px solid var(--white);
         }
         
-        /* Vantaggi Offerta */
-        .vantaggi-offerta {
-            padding: 60px 0;
-            background-color: white;
+        .btn-white:hover {
+            background-color: transparent;
+            color: var(--white);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 600;
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* FILTER SECTION */
+        .filters {
+            background-color: var(--gray-very-light);
+            padding: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .filter-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .filter-group label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--gray-medium);
+        }
+        
+        .filter-group select {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: var(--white);
+            font-family: 'Roboto', sans-serif;
+            min-width: 200px;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+        
+        .search-box input {
+            padding: 10px 15px;
+            border: none;
+            outline: none;
+            width: 300px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .search-box button {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .search-box button:hover {
+            background: var(--gray-medium);
+        }
+        
+        /* PRODUCTS GRID */
+        .products-section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 3rem;
+            position: relative;
         }
         
         .section-title h2 {
-            font-size: 2rem;
-            color: #000000;
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            display: inline-block;
         }
         
-        .section-title p {
-            color: #000000;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .vantaggi-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .vantaggio {
-            text-align: center;
-            padding: 30px 20px;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        
-        .vantaggio:hover {
-            transform: translateY(-10px);
-        }
-        
-        .vantaggio i {
-            font-size: 3rem;
-            margin-bottom: 15px;
+        .section-title::after {
+            content: '';
             display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--black);
+            margin: 15px auto;
         }
         
-        .vantaggio h3 {
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .vantaggio p {
-            color: #666;
-        }
-        
-        /* Come Funziona */
-        .come-funziona {
-            padding: 60px 0;
-            background-color: #f8f8f8;
-        }
-        
-        .passi {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .passo {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-            padding: 30px 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        
-        .passo:hover {
-            transform: translateY(-5px);
-        }
-        
-        .numero-passo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: #000000;
-            color: white;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 15px;
-        }
-        
-        /* Testimonianze */
-        .testimonianze {
-            padding: 60px 0;
-            background-color: white;
-        }
-        
-        .testimonianze-grid {
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
         
-        .testimonianza {
-            background-color: #f8f9fa;
-            padding: 25px;
+        .product-card {
+            background-color: var(--white);
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .testimonianza p {
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-        
-        .cliente {
-            display: flex;
-            align-items: center;
-        }
-        
-        .cliente-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #ddd;
-            margin-right: 15px;
             overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--gray-very-light);
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--black);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            z-index: 2;
+        }
+        
+        .product-rating {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 5px 10px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background-color: #000000;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .cliente-info h4 {
-            margin-bottom: 5px;
-        }
-        
-        .cliente-info p {
-            font-style: normal;
-            color: #666;
+            gap: 5px;
             font-size: 0.9rem;
+            font-weight: bold;
+            z-index: 2;
         }
         
-        /* CTA Finale */
-        .cta-finale {
-            background: linear-gradient(135deg, #000000 0%, #333333 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 0;
+        .product-info {
+            padding: 1.8rem;
         }
         
-        .cta-finale h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
+        .product-category {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
         }
         
-        .cta-finale p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+        .product-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
         }
         
-        .btn-bianco {
-            background-color: rgb(255, 255, 255);
-            color: #000000;
+        .product-info p {
+            color: var(--gray-light);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
         
-        .btn-bianco:hover {
-            background-color: #e4d500;
-            color: #000000;
+        .product-price {
+            font-weight: bold;
+            color: var(--black);
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
         }
         
-        /* Footer */
-        footer {
-            background-color: #000000;
-            color: rgb(255, 255, 255);
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
+        .product-actions {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            gap: 10px;
         }
         
-        .footer-logo {
-            max-width: 150px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-logo img {
-            max-width: 100%;
-            height: auto;
-            filter: brightness(0) invert(1);
-        }
-        
-        .footer-links {
-            margin-bottom: 20px;
-        }
-        
-        .footer-links a {
-            color: white;
-            margin: 0 10px;
+        .btn-outline {
+            background: transparent;
+            color: var(--black);
+            border: 1px solid var(--black);
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            transition: all 0.3s;
             text-decoration: none;
         }
         
+        .btn-outline:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+        
+        .btn-favorite {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-favorite:hover {
+            background: #fff0f0;
+            border-color: #ff6b6b;
+            color: #ff6b6b;
+        }
+        
+        /* STAR RATING SYSTEM */
+        .star-rating {
+            display: inline-flex;
+            gap: 3px;
+        }
+        
+        .star {
+            color: #ddd;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        
+        .star.active {
+            color: #ffc107;
+        }
+        
+        /* PAGINATION */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 4rem;
+            gap: 10px;
+        }
+        
+        .pagination button {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .pagination button:hover {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+        
+        .pagination button.active {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+        
+        /* NEWSLETTER */
+        .newsletter {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .newsletter p {
+            margin-bottom: 2rem;
+            color: #ccc;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .newsletter-form button {
+            background: var(--white);
+            color: var(--black);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: #e0e0e0;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--white);
+            margin-top: 10px;
+        }
+        
+        .footer-column p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
         .footer-links a:hover {
-            color: #e4d500;
+            color: var(--white);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
         }
         
         .copyright {
-            color: #aaa;
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
+            color: #aaa;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-            }
-            
-            .logo {
-                margin-bottom: 15px;
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .header-container {
+                justify-content: space-between;
             }
             
             nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
+                display: none;
+                width: 30px;
             }
             
-            nav ul li {
-                margin: 5px 10px;
+            .mobile-menu {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-products h1 {
+                font-size: 2.8rem;
             }
             
-            .banner-offerta h1 {
-                font-size: 2rem;
-            }
-            
-            .banner-offerta p {
-                font-size: 1rem;
-            }
-            
-            .offerta-principale {
+            .filter-container {
                 flex-direction: column;
+                align-items: flex-start;
             }
             
-            .offerta-immagine {
+            .search-box {
                 width: 100%;
-                order: -1;
             }
             
-            .timer {
-                flex-wrap: wrap;
-                gap: 10px;
+            .search-box input {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-products {
+                height: 50vh;
             }
             
-            .timer-unit {
-                min-width: 80px;
-                padding: 20px 10px;
-            }
-            
-            .timer-number {
+            .hero-products h1 {
                 font-size: 2.2rem;
             }
             
-            .timer-title {
-                font-size: 1.5rem;
+            .hero-products p {
+                font-size: 1.1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: 4px;
+                width: 100%;
+            }
+            
+            /* Logo plus grand sur mobile */
+            .logo img {
+                height: 100px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+            
+            .logo img {
+                height: 90px; /* Logo encore plus grand sur mobile */
+            }
+            
+            .hero-products {
+                padding: 0 1rem;
+                height: 40vh;
+            }
+            
+            .hero-products h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- HEADER -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="https://static.wixstatic.com/media/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png/v1/fill/w_1110,h_638,al_c,q_90,enc_avif,quality_auto/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png" alt="Restauro Lavaggio Tappeti">
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="About us.html">Chi Siamo</a></li>
-                        <li><a href="Prodotti.html"> Prodotti </a></li>
-                        <li><a href="lavaggio e restauro.html"> Lavaggio e restauro </a></li>
-                        <li><a href="contact.html">Contatti</a></li>
-                        <li><a href="faq.html"> Faq</a></li>
-                        <li><a href="offerte.html"> Offerte </a></li>
-                    </ul>
-                </nav>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://static.wixstatic.com/media/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png/v1/fill/w_1110,h_638,al_c,q_90,enc_avif,quality_auto/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png" alt="Ali Esteki Carpets">
             </div>
+    
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About us.html">Chi Siamo</a></li>
+                    <li><a href="Prodotti.html" class="active">Prodotti</a></li>
+                    <li><a href="lavaggio e restauro.html">Lavaggio e Restauro</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="offerte.html">Offerte</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <!-- Timer Stylé -->
-    <section class="timer-section">
-        <div class="container">
-            <div class="timer-container">
-                <h1 class="timer-title">OFFERTA SCADE TRA</h1>
-                <p class="timer-subtitle">Affrettati! L'offerta è limitata nel tempo</p>
-                
-                <div class="timer">
-                    <div class="timer-unit">
-                        <div class="timer-number" id="days">05</div>
-                        <div class="timer-label">Giorni</div>
-                    </div>
-                    <div class="timer-unit">
-                        <div class="timer-number" id="hours">12</div>
-                        <div class="timer-label">Ore</div>
-                    </div>
-                    <div class="timer-unit">
-                        <div class="timer-number" id="minutes">45</div>
-                        <div class="timer-label">Minuti</div>
-                    </div>
-                    <div class="timer-unit">
-                        <div class="timer-number flashing" id="seconds">30</div>
-                        <div class="timer-label">Secondi</div>
-                    </div>
-                </div>
+    <!-- MOBILE NAVIGATION -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About us.html">Chi Siamo</a></li>
+            <li><a href="Prodotti.html" class="active">Prodotti</a></li>
+            <li><a href="lavaggio e restauro.html">Lavaggio e Restauro</a></li>
+            <li><a href="contact.html">Contatti</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="offerte.html">Offerte</a></li>
+        </ul>
+    </div>
+    <div class="overlay" id="overlay"></div>
 
-                <div class="progress-bar">
-                    <div class="progress" id="progress"></div>
-                </div>
+    <!-- HERO SECTION -->
+    <section class="hero-products">
+        <div class="hero-content">
+            <h1>La Nostra Collezione di Tappeti</h1>
+            <p>Scopri la nostra selezione esclusiva di tappeti orientali autentici, tessuti a mano da maestri artigiani.</p>
+            <a href="#products" class="btn btn-white">Esplora la Collezione</a>
+        </div>
+    </section>
 
-                <div class="offer-info">
-                    <p class="offer-text">Sconto speciale del</p>
-                    <div class="discount-badge">-30%</div>
-                    <p class="offer-text" style="margin-top: 10px;">Solo per i primi 10 clienti!</p>
-                </div>
+    <!-- FILTER SECTION -->
+    <section class="filters">
+        <div class="filter-container">
+            <div class="filter-group">
+                <label for="category">Categoria</label>
+                <select id="category">
+                    <option value="all">Tutte le Categorie</option>
+                    <option value="persian">Tappeti Persiani</option>
+                    <option value="turkish">Tappeti Turchi</option>
+                    <option value="moroccan">Tappeti Marocchini</option>
+                    <option value="indian">Tappeti Indiani</option>
+                    <option value="modern">Tappeti Moderni</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="size">Dimensione</label>
+                <select id="size">
+                    <option value="all">Tutte le Dimensioni</option>
+                    <option value="small">Piccoli (fino a 2m²)</option>
+                    <option value="medium">Medi (2-4m²)</option>
+                    <option value="large">Grandi (4-8m²)</option>
+                    <option value="xlarge">Molto Grandi (oltre 8m²)</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="price">Fascia di Prezzo</label>
+                <select id="price">
+                    <option value="all">Tutte le Fasce</option>
+                    <option value="low">Fino a €1.000</option>
+                    <option value="medium">€1.000 - €3.000</option>
+                    <option value="high">€3.000 - €6.000</option>
+                    <option value="premium">Oltre €6.000</option>
+                </select>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Cerca tappeti...">
+                <button><i class="fas fa-search"></i></button>
             </div>
         </div>
     </section>
 
-    <!-- Banner Offerta -->
-    <section class="banner-offerta">
-        <div class="container">
-            <h1>OFFERTA SPECIALE LIMITATA</h1>
-            <p>Approfitta subito dello sconto del 30% sul lavaggio professionale dei tuoi tappeti. Solo per i primi 10 clienti che prenotano!</p>
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section" id="products">
+        <div class="section-title">
+            <h2>I Nostri Tappeti</h2>
+            <p>Una selezione curata dei migliori tappeti orientali</p>
         </div>
-    </section>
-
-    <!-- Offerta Principale -->
-    <section class="container">
-        <div class="offerta-principale">
-            <div class="offerta-testo">
-                <h2>Lavaggio Completo Tappeto</h2>
-                <p>Trattamento professionale che include:</p>
-                <ul style="margin: 15px 0 15px 20px;">
-                    <li>Lavaggio profondo con tecnologia ad estrazione</li>
-                    <li>Sanificazione e eliminazione acari</li>
-                    <li>Deodorizzazione profonda</li>
-                    <li>Asciugatura controllata</li>
-                    <li>Ritiro e consegna a domicilio inclusi</li>
-                </ul>
-                
-                <div class="prezzi">
-                    <div class="vecchio-prezzo">€120</div>
-                    <div class="nuovo-prezzo">€84</div>
-                    <div class="badge-sconto">-30%</div>
-                </div>
-                
-                <p><strong>Risparmi €36!</strong> Offerta valida fino al 30 novembre o fino ad esaurimento posti.</p>
-                
-                <a href="#prenota" class="btn btn-grande">PRENOTA ORA CON LO SCONTO</a>
-                
-                <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Solo 5 posti disponibili rimasti</p>
-            </div>
-            <div class="offerta-immagine"></div>
-        </div>
-    </section>
-
-    <!-- Vantaggi Offerta -->
-    <section class="vantaggi-offerta">
-        <div class="container">
-            <div class="section-title">
-                <h2>Perché approfittare di questa offerta?</h2>
-                <p>Ecco tutti i vantaggi che otterrai scegliendo il nostro servizio</p>
-            </div>
-            <div class="vantaggi-grid">
-                <div class="vantaggio">
-                    <i>💰</i>
-                    <h3>Risparmio Garantito</h3>
-                    <p>Oltre €36 di sconto sul prezzo regolare del servizio completo.</p>
-                </div>
-                <div class="vantaggio">
-                    <i>⭐</i>
-                    <h3>Qualità Premium</h3>
-                    <p>Stessi standard qualitativi dei nostri servizi regolari a prezzo scontato.</p>
-                </div>
-                <div class="vantaggio">
-                    <i>🚚</i>
-                    <h3>Servizio Completo</h3>
-                    <p>Ritiro e consegna a domicilio inclusi senza costi aggiuntivi.</p>
-                </div>
-                <div class="vantaggio">
-                    <i>🛡️</i>
-                    <h3>Garanzia Soddisfatto</h3>
-                    <p>Se non sei soddisfatto del risultato, ripetiamo il lavaggio gratuitamente.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Come Funziona -->
-    <section class="come-funziona">
-        <div class="container">
-            <div class="section-title">
-                <h2>Come funziona?</h2>
-                <p>Pochi semplici passi per avere i tuoi tappeti come nuovi</p>
-            </div>
-            <div class="passi">
-                <div class="passo">
-                    <div class="numero-passo">1</div>
-                    <h3>Prenota Online</h3>
-                    <p>Compila il form per prenotare il servizio con lo sconto</p>
-                </div>
-                <div class="passo">
-                    <div class="numero-passo">2</div>
-                    <h3>Ritiro a Domicilio</h3>
-                    <p>Passiamo a ritirare i tuoi tappeti nell'orario concordato</p>
-                </div>
-                <div class="passo">
-                    <div class="numero-passo">3</div>
-                    <h3>Lavaggio Professionale</h3>
-                    <p>Eseguiamo il trattamento completo nel nostro laboratorio</p>
-                </div>
-                <div class="passo">
-                    <div class="numero-passo">4</div>
-                    <h3>Consegna a Domicilio</h3>
-                    <p>Riportiamo i tuoi tappeti puliti e profumati direttamente a casa tua</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonianze -->
-    <section class="testimonianze">
-        <div class="container">
-            <div class="section-title">
-                <h2>Cosa dicono i nostri clienti</h2>
-                <p>La soddisfazione dei nostri clienti è la nostra migliore pubblicità</p>
-            </div>
-            <div class="testimonianze-grid">
-                <div class="testimonianza">
-                    <p>"Ho approfittato dell'offerta dello scorso mese e sono rimasto stupefatto dal risultato. Il mio tappeto persiano sembrava nuovo! Servizio impeccabile."</p>
-                    <div class="cliente">
-                        <div class="cliente-avatar">MR</div>
-                        <div class="cliente-info">
-                            <h4>Marco Rossi</h4>
-                            <p>Roma</p>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.DHcdoc1lwkMWsv8Rvo6FKQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Persiano Isfahan">
+                    <div class="product-badge">Esclusivo</div>
+                    <div class="product-rating">
+                        <div class="star-rating">
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
                         </div>
+                        <span>5.0</span>
                     </div>
                 </div>
-                <div class="testimonianza">
-                    <p>"Ritiro e consegna puntuali, comunicazione eccellente e tappeto restituito profumato e pulito a fondo. Consigliatissimo soprattutto con queste offerte!"</p>
-                    <div class="cliente">
-                        <div class="cliente-avatar">LB</div>
-                        <div class="cliente-info">
-                            <h4>Laura Bianchi</h4>
-                            <p>Milano</p>
-                        </div>
+                <div class="product-info">
+                    <div class="product-category">Persiano</div>
+                    <h3>Tappeto Isfahan Blu Reale</h3>
+                    <p>Realizzato con seta e lana di prima qualità, caratterizzato da motivi floreali intricati su fondo blu intenso.</p>
+                    <div class="product-price">€ 3.200</div>
+                    <div class="product-actions">
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Isfahan%20Blu%20Reale%20da%20€3.200" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
                     </div>
                 </div>
-                <div class="testimonianza">
-                    <p>"Avevo macchie difficili sul tappeto del soggiorno che pensavo fossero permanenti. Con il loro trattamento sono scomparse completamente. Servizio top!"</p>
-                    <div class="cliente">
-                        <div class="cliente-avatar">GV</div>
-                        <div class="cliente-info">
-                            <h4>Giuseppe Verdi</h4>
-                            <p>Napoli</p>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://th.bing.com/th/id/OIP.LlSp8a1XdISnuDfHYyatnQHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Turco Anatolio">
+                    <div class="product-badge">Popolare</div>
+                    <div class="product-rating">
+                        <div class="star-rating">
+                             <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
                         </div>
+                        <span>5.0</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Turco</div>
+                    <h3>Tappeto Anatolio Rosso</h3>
+                    <p>Design geometrico elegante, realizzato con lana pura e tinture naturali. Perfetto per ambienti moderni.</p>
+                    <div class="product-price">€ 2.800</div>
+                    <div class="product-actions">
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Anatolio%20Rosso%20da%20€2.800" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.tGPTeXHqD_QzWuTeoQddJAHaKz?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Marocchino Berbero">
+                    <div class="product-badge">Naturale</div>
+                    <div class="product-rating">
+                        <div class="star-rating">
+                              <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                        </div>
+                        <span>5.0</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Persiano</div>
+                    <h3>Tappeto Nain</h3>
+                    <p>Tappeto Nain autentico, realizzato a mano in Iran secondo la tradizione persiana. Caratterizzato da un nodo finissimo, motivi floreali eleganti e l'inconfondibile combinazione di avorio e blu.</p>
+                    <div class="product-price">€ 1.900</div>
+                    <div class="product-actions">
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Nain%20da%20€1.900" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.0pMCT-n1cIdWlebiSh0a-gHaKz?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Indiano Agra">
+                    <div class="product-badge">Lusso</div>
+                    <div class="product-rating">
+                        <div class="star-rating">
+                             <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                        </div>
+                        <span>5.0</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Persiano</div>
+                    <h3>Tappeto Kashan</h3>
+                   <p>Tappeto Kashan di alta qualità, annodato a mano in Iran con lana pregiata e trama in cotone. Celebre per i suoi motivi floreali simmetrici e il classico medaglione centrale.</p>
+                    <div class="product-price">€ 4.500</div>
+                    <div class="product-actions">
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Kashan%20da%20€4.500" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.E3rcUtGhiPAhozQobhVM0AHaKz?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tappeto Persiano Kashan">
+                    <div class="product-badge">Vintage</div>
+                    <div class="product-rating">
+                        <div class="star-rating">
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                        </div>
+                        <span>5.0</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Persiano</div>
+                    <h3>Tappeto Kashan Antico</h3>
+                    <p>Tappeto vintage degli anni '50, in eccellenti condizioni. Colori naturali e disegno tradizionale.</p>
+                    <div class="product-price">€ 5.200</div>
+                    <div class="product-actions">
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Kashan%20Antico%20da%20€5.200" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://archivio.dimanoinmano.it/img/1206657/full/antiquariato/tappeti/tappeto-malayer-iran.jpg" alt="Tappeto Moderno Geometrico">
+                    <div class="product-badge">Antico</div>
+                    <div class="product-rating">
+                        <div class="star-rating">
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                            <i class="fas fa-star active"></i>
+                        </div>
+                        <span>5.0</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Persiano</div>
+                    <h3>Tappeto Malayer Antico</h3>
+                    <p>Tappeto Malayer antico, annodato a mano nella regione dell'Azerbaijan iraniano, noto per i suoi motivi geometrici raffinati e per le tonalità calde e profonde.</p>
+                    <div class="product-price">€ 1.500</div>
+                    <div class="product-actions">
+                        <a href="https://wa.me/393408105898?text=Ciao!%20Sono%20interessato%20al%20Tappeto%20Malayer%20Antico%20da%20€1.500" class="btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <button class="btn-favorite"><i class="far fa-heart"></i></button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Finale -->
-    <section class="cta-finale" id="prenota">
-        <div class="container">
-            <h2>Non perdere questa opportunità!</h2>
-            <p>Prenota ora il lavaggio professionale del tuo tappeto con il 30% di sconto. Posti limitati!</p>
-            <a href="tel:+393408105898" class="btn btn-bianco btn-grande">CHIAMA ORA PER PRENOTARE</a>
-            <p style="margin-top: 20px; font-size: 1rem;">Offerta valida solo per prenotazioni online entro il 30 novembre</p>
+        
+        <!-- PAGINATION -->
+        <div class="pagination">
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>Rimani Aggiornato</h2>
+            <p>Iscriviti alla nostra newsletter per ricevere aggiornamenti sulle nuove collezioni e offerte esclusive.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="La tua email" required>
+                <button type="submit">Iscriviti</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="https://static.wixstatic.com/media/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png/v1/fill/w_1110,h_638,al_c,q_90,enc_avif,quality_auto/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png" alt="Restauro Lavaggio Tappeti">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Ali Esteki Carpets</h3>
+                <p>Da oltre quarant'anni, portiamo l'arte e la tradizione dei tappeti orientali in Italia, con passione e competenza.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/aliestekicarpets/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/aliestekicarpets/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@TappetiPersiani"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/393408105898"><i class="fab fa-whatsapp"></i></a>
                 </div>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="lavaggio e restauro.html">Lavaggio e restauro </a>
-                    <a href="contact.html">Contatti</a>
-                    <a href="#">Privacy Policy</a>
-                </div>
-                <p class="copyright">© 1979  Aliesteki.it  . Tutti i diritti riservati.</p>
             </div>
+            <div class="footer-column">
+                <h3>Link Veloci</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Chi Siamo</a></li>
+                    <li><a href="products.html">Prodotti</a></li>
+                    <li><a href="services.html">Servizi</a></li>
+                    <li><a href="contact.html">Contatti</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categorie</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Tappeti Persiani</a></li>
+                    <li><a href="#">Tappeti Turchi</a></li>
+                    <li><a href="#">Tappeti Marocchini</a></li>
+                    <li><a href="#">Tappeti Indiani</a></li>
+                    <li><a href="#">Tappeti Moderni</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contatti</h3>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Via Guglielmo Marconi, 2, 60125 Ancona AN, Italia</p>
+                    </div> 
+                    <h4>Email</h4>
+                    <p>  aliestekicarpets@gmail.com </p>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <p>+39 071206066 </p>
+                        <p>+39 071206036</p>
+                        <p>+39 3408105898</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 1979 Ali Esteki Carpets. Tutti i diritti riservati.</p>
         </div>
     </footer>
 
     <script>
-        // Date de fin de l'offre (5 jours à partir de maintenant)
-        const endDate = new Date();
-        endDate.setDate(endDate.getDate() + 5);
-        endDate.setHours(23, 59, 59, 999);
+        // Mobile Menu
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeMenu = document.getElementById('closeMenu');
+        const overlay = document.getElementById('overlay');
 
-        function updateTimer() {
-            const now = new Date();
-            const timeLeft = endDate - now;
+        mobileMenu.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
 
-            if (timeLeft <= 0) {
-                document.getElementById('days').textContent = '00';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
-                return;
+        closeMenu.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        overlay.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-nav a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.padding = '0.5rem 2rem';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.padding = '1rem 2rem';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.2)';
             }
+        });
 
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        // Favorite buttons
+        const favoriteButtons = document.querySelectorAll('.btn-favorite');
+        favoriteButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if(icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    this.style.color = '#ff6b6b';
+                    this.style.borderColor = '#ff6b6b';
+                    this.style.background = '#fff0f0';
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    this.style.color = '';
+                    this.style.borderColor = '';
+                    this.style.background = '';
+                }
+            });
+        });
 
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        // Filter functionality (basic implementation)
+        const filterSelects = document.querySelectorAll('.filter-group select');
+        filterSelects.forEach(select => {
+            select.addEventListener('change', function() {
+                // In a real implementation, this would filter the products
+                console.log('Filter changed:', this.id, this.value);
+            });
+        });
 
-            // Mise à jour de la barre de progression
-            const totalTime = 5 * 24 * 60 * 60 * 1000; // 5 jours en millisecondes
-            const progress = ((totalTime - timeLeft) / totalTime) * 100;
-            document.getElementById('progress').style.width = Math.min(progress, 100) + '%';
+        // Search functionality
+        const searchInput = document.querySelector('.search-box input');
+        const searchButton = document.querySelector('.search-box button');
+        
+        searchButton.addEventListener('click', function() {
+            performSearch();
+        });
+        
+        searchInput.addEventListener('keypress', function(e) {
+            if(e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        function performSearch() {
+            const searchTerm = searchInput.value.trim();
+            if(searchTerm) {
+                // In a real implementation, this would search the products
+                console.log('Searching for:', searchTerm);
+                alert('Ricerca per: ' + searchTerm);
+            }
         }
-
-        // Mise à jour toutes les secondes
-        setInterval(updateTimer, 1000);
-        updateTimer(); // Appel initial
-
-        // Animation pour les secondes
-        setInterval(() => {
-            const secondsElement = document.getElementById('seconds');
-            secondsElement.classList.toggle('flashing');
-        }, 500);
     </script>
 </body>
 </html>
