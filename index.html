@@ -582,6 +582,7 @@
             display: flex;
             justify-content: center;
             margin-top: 2rem;
+            gap: 10px;
         }
 
         .testimonial-dot {
@@ -589,7 +590,6 @@
             height: 12px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.3);
-            margin: 0 5px;
             cursor: pointer;
         }
 
@@ -882,7 +882,7 @@
             animation: fadeInScale 1s ease-out forwards;
         }
         
-        /* RESPONSIVE */
+        /* RESPONSIVE - LOGO AGRANDI SUR MOBILE */
         @media (max-width: 1200px) {
             .header-container {
                 justify-content: space-between;
@@ -912,7 +912,7 @@
             }
             
             .logo img {
-                height: 60px;
+                height: 120px; /* Logo plus grand sur tablette */
             }
             
             .loader-logo {
@@ -939,7 +939,7 @@
             }
             
             .logo img {
-                height: 50px;
+                height: 100px; /* Logo encore plus grand sur mobile */
             }
             
             .loader-logo {
@@ -978,7 +978,7 @@
             }
             
             .logo img {
-                height: 40px;
+                height: 80px; /* Logo très grand sur petits mobiles */
             }
             
             .loader-logo {
@@ -1005,6 +1005,17 @@
             
             .video-overlay h3 {
                 font-size: 1.2rem;
+            }
+        }
+
+        /* Media query pour les très petits écrans */
+        @media (max-width: 400px) {
+            .logo img {
+                height: 70px; /* Logo adapté aux très petits écrans */
+            }
+            
+            .header-container {
+                padding: 0.5rem 1rem;
             }
         }
     </style>
@@ -1484,8 +1495,5 @@ Consigliato 👍🏼"
         });
     </script>
 </body>
-
 </html>
-
-
 
