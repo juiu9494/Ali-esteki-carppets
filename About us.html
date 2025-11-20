@@ -468,67 +468,6 @@
             margin-bottom: 1rem;
         }
         
-        /* TEAM */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .team-member {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.5s ease;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .team-member.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .member-image {
-            height: 300px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-        
-        .team-member:hover .member-image img {
-            transform: scale(1.1);
-        }
-        
-        .member-info {
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .member-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .member-role {
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        
         /* GALLERY */
         .gallery-grid {
             display: grid;
@@ -746,7 +685,7 @@
             }
             
             .logo img {
-                height: 60px;
+                height: 120px; /* Logo plus grand sur tablette */
             }
             
             .timeline::after {
@@ -787,7 +726,7 @@
             }
             
             .logo img {
-                height: 50px;
+                height: 100px; /* Logo plus grand sur mobile */
             }
         }
         
@@ -814,7 +753,7 @@
             }
             
             .logo img {
-                height: 40px;
+                height: 80px; /* Logo très grand sur petits mobiles */
             }
         }
     </style>
@@ -955,9 +894,6 @@
             </div>
         </div>
     </section>
-
-    <!-- TEAM -->
-   
 
     <!-- GALLERY -->
     <section>
@@ -1203,6 +1139,5 @@
         });
     </script>
 </body>
-
 </html>
 
