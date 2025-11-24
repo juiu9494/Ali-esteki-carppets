@@ -3,76 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Siamo - Ali Esteki Carpets</title>
+    <title>Restauro Lavaggio Tappeti - Pulizia Professionale di Tappeti e Moquette</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #000000;
-            --secondary: #000000;
-            --accent: #000000;
-            --light: #F5F5DC;
-            --dark: #000000;
-            --text: #000000;
-            --gold: #070707;
-        }
-        
+        /* Reset e stili generali */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --gold: #d4af37;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --light-gray: #f8f8f8;
+            --dark-gray: #333333;
+            --beige: #f5f1e8;
         }
         
         body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text);
-            background-color: var(--light);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
             overflow-x: hidden;
         }
         
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            color: var(--dark);
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
         
-        /* HEADER */
+        /* Header */
         header {
-            background-color: var(--dark);
-            color: white;
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
+            background-color: var(--black);
+            position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
+            border-bottom: 2px solid var(--gold);
         }
         
-        .header-container {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
+            padding: 20px 0;
         }
         
         .logo {
-            display: flex;
-            align-items: center;
+            max-width: 220px;
+            transition: transform 0.3s;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
         }
         
         .logo img {
-            height: 190px;
-            transition: all 0.3s ease;
-        }
-        
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-left: 10px;
-            color: white;
+            max-width: 100%;
+            height: auto;
         }
         
         nav ul {
@@ -80,532 +73,496 @@
             list-style: none;
         }
         
-        nav li {
-            margin-left: 2rem;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        nav ul li {
+            margin-left: 30px;
             position: relative;
         }
         
-        nav a:hover {
+        nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a:hover {
             color: var(--gold);
         }
         
-        nav a::after {
+        nav ul li a::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             background-color: var(--gold);
-            transition: width 0.3s ease;
+            transition: width 0.3s;
         }
         
-        nav a:hover::after {
+        nav ul li a:hover::after {
             width: 100%;
         }
         
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        
-        /* MOBILE NAVIGATION */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            height: 100vh;
-            background-color: var(--dark);
-            z-index: 999;
-            transition: right 0.4s ease;
-            padding: 100px 2rem 2rem;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .mobile-nav.active {
-            right: 0;
-        }
-        
-        .mobile-nav ul {
-            list-style: none;
-        }
-        
-        .mobile-nav li {
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 1rem;
-        }
-        
-        .mobile-nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            display: block;
-            transition: color 0.3s ease;
-        }
-        
-        .mobile-nav a:hover {
-            color: var(--gold);
-        }
-        
-        .close-menu {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.5rem;
-            color: white;
-            cursor: pointer;
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-        }
-        
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* HERO SECTION */
+        /* Hero Section */
         .hero {
-            height: 70vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://static.wixstatic.com/media/5e3e4d_cdfb12eb3c014558bf4ede69925e3ef1.jpg/v1/fill/w_1343,h_650,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5e3e4d_cdfb12eb3c014558bf4ede69925e3ef1.jpg');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1758&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: var(--white);
             text-align: center;
-            color: white;
-            padding: 0 2rem;
-            margin-top: 80px;
+            padding: 180px 0;
+            position: relative;
         }
         
         .hero-content {
-            max-width: 800px;
-            animation: fadeUp 1s ease-out;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            font-weight: 300;
+            letter-spacing: 1px;
         }
         
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            font-weight: 300;
         }
         
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary);
-            color: white;
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 16px 40px;
+            border-radius: 0;
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            border: 2px solid var(--gold);
+            letter-spacing: 1px;
         }
         
         .btn:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: transparent;
+            color: var(--gold);
+            transform: translateY(-5px);
         }
         
-        .btn-gold {
-            background-color: var(--gold);
-        }
-        
-        .btn-gold:hover {
-            background-color: #b8941f;
-        }
-        
-        @keyframes fadeUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* SECTIONS */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Servizi */
+        .servizi {
+            padding: 100px 0;
+            background-color: var(--light-gray);
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
+            margin-bottom: 60px;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            color: var(--black);
+            margin-bottom: 15px;
+            position: relative;
             display: inline-block;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
         
-        .section-title::after {
+        .section-title h2::after {
             content: '';
-            display: block;
+            position: absolute;
             width: 80px;
             height: 3px;
-            background-color: var(--primary);
-            margin: 15px auto;
+            background: var(--gold);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
-        /* ABOUT INTRO */
-        .about-intro {
-            background: linear-gradient(135deg, var(--light) 0%, #f8f4e9 100%);
-            padding: 6rem 2rem;
-            border-radius: 20px;
-            margin: 2rem auto;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about-intro::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(139,69,19,0.05)"/></svg>');
-            background-size: cover;
-        }
-        
-        .intro-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .intro-content p {
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 30px auto 0;
             font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s ease forwards;
+            line-height: 1.7;
         }
         
-        .intro-content p:nth-child(1) { animation-delay: 0.2s; }
-        .intro-content p:nth-child(2) { animation-delay: 0.4s; }
-        .intro-content p:nth-child(3) { animation-delay: 0.6s; }
-        .intro-content p:nth-child(4) { animation-delay: 0.8s; }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* TIMELINE */
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 4rem auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--primary);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 10px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .timeline-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: white;
-            position: relative;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .timeline-content::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: white;
-            top: 22px;
-            border-radius: 50%;
-            z-index: 1;
-            transform: rotate(45deg);
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content::after {
-            left: -10px;
-            right: auto;
-        }
-        
-        .timeline-year {
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        
-        /* VALUES */
-        .values-grid {
+        .servizi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
         
-        .value-card {
-            background: white;
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.5s ease;
-            position: relative;
+        .servizio-card {
+            background-color: var(--white);
+            border-radius: 0;
             overflow: hidden;
-            opacity: 0;
-            transform: translateY(30px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.4s;
+            position: relative;
+            border-bottom: 3px solid var(--gold);
         }
         
-        .value-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .value-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--gold));
-        }
-        
-        .value-card:hover {
+        .servizio-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
-        .value-icon {
-            font-size: 3.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
+        .servizio-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s;
         }
         
-        .value-card:hover .value-icon {
-            transform: scale(1.2) rotate(5deg);
+        .servizio-card:hover .servizio-img {
+            transform: scale(1.05);
+        }
+        
+        .servizio-content {
+            padding: 30px;
+            position: relative;
+        }
+        
+        .servizio-content h3 {
+            margin-bottom: 15px;
+            color: var(--black);
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .servizio-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .servizio-contatti {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .servizio-contatto {
+            display: flex;
+            align-items: center;
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .servizio-contatto:hover {
             color: var(--gold);
         }
         
-        .value-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .servizio-contatto i {
+            margin-right: 8px;
+            font-size: 1.2rem;
         }
         
-        /* GALLERY */
-        .gallery-grid {
+        /* Galleria Tapeti Moderni */
+        .galleria {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .galleria-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
         
-        .gallery-item {
-            border-radius: 10px;
+        .galleria-item {
+            border-radius: 0;
             overflow: hidden;
+            height: 350px;
             position: relative;
-            height: 250px;
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.8s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.4s;
         }
         
-        .gallery-item.visible {
-            opacity: 1;
-            transform: scale(1);
+        .galleria-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
-        .gallery-item img {
+        .galleria-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s ease;
+            transition: transform 0.5s;
         }
         
-        .gallery-item:hover img {
+        .galleria-item:hover img {
             transform: scale(1.1);
         }
         
-        .gallery-overlay {
+        .galleria-overlay {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
-            display: flex;
-            align-items: flex-end;
-            padding: 1.5rem;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        
-        .gallery-text {
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
             color: white;
-            transform: translateY(20px);
-            transition: transform 0.5s ease;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
         }
         
-        .gallery-item:hover .gallery-text {
+        .galleria-item:hover .galleria-overlay {
             transform: translateY(0);
         }
         
-        /* CONTACT CTA */
-        .contact-cta {
-            background: linear-gradient(135deg, var(--dark) 0%, #4a2c1d 100%);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-            border-radius: 20px;
-            margin: 4rem auto;
-            position: relative;
-            overflow: hidden;
+        .galleria-overlay h3 {
+            margin-bottom: 5px;
+            font-size: 1.3rem;
         }
         
-        .contact-cta::before {
+        /* Perché Sceglierci */
+        .perche-sceglierci {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+        }
+        
+        .perche-sceglierci .section-title h2 {
+            color: var(--white);
+        }
+        
+        .perche-sceglierci .section-title p {
+            color: #ddd;
+        }
+        
+        .vantaggi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .vantaggio {
+            text-align: center;
+            padding: 50px 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 0;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .vantaggio:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .vantaggio i {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            display: block;
+            color: var(--gold);
+        }
+        
+        .vantaggio h3 {
+            margin-bottom: 20px;
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .vantaggio p {
+            color: #ddd;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        /* Contatti */
+        .contatti {
+            padding: 100px 0;
+            background-color: var(--beige);
+        }
+        
+        .contatti-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .info-contatti {
+            margin-bottom: 30px;
+        }
+        
+        .info-contatti h3 {
+            margin-bottom: 25px;
+            color: var(--black);
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 400;
+        }
+        
+        .info-contatti h3::after {
             content: '';
             position: absolute;
-            top: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+            bottom: -10px;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(212,175,55,0.1)"/></svg>');
-            background-size: cover;
         }
         
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin: 0 auto;
+        .info-contatto {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
         }
         
-        .contact-cta h2 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: var(--black);
         }
         
-        .contact-cta p {
+        .info-text h4 {
+            margin-bottom: 5px;
+            color: var(--black);
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
         }
         
-        /* FOOTER */
+        .info-text p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .form-contatti {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--gold);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-contatti input,
+        .form-contatti textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+        
+        .form-contatti input:focus,
+        .form-contatti textarea:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+        
+        .form-contatti textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-invia {
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 16px 35px;
+            border-radius: 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+        
+        .btn-invia:hover {
+            background-color: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
         footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 3rem 2rem 1rem;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 70px 0 20px;
+            border-top: 2px solid var(--gold);
         }
         
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 40px;
+            margin-bottom: 40px;
         }
         
-        .footer-column h3 {
-            color: white;
+        .footer-col h4 {
+            color: var(--gold);
+            margin-bottom: 25px;
             font-size: 1.3rem;
-            margin-bottom: 1.5rem;
             position: relative;
+            display: inline-block;
+            font-weight: 500;
         }
         
-        .footer-column h3::after {
+        .footer-col h4::after {
             content: '';
-            display: block;
+            position: absolute;
             width: 40px;
             height: 2px;
-            background-color: var(--gold);
-            margin-top: 10px;
+            background: var(--gold);
+            bottom: -10px;
+            left: 0;
         }
         
-        .footer-column p {
-            line-height: 1.6;
-            margin-bottom: 1rem;
+        .footer-logo {
+            max-width: 200px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .footer-col p {
+            color: #aaa;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
         }
         
         .footer-links {
@@ -613,532 +570,600 @@
         }
         
         .footer-links li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 12px;
         }
         
         .footer-links a {
-            color: #ccc;
+            color: #ddd;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
+            display: inline-block;
+            font-size: 1.1rem;
         }
         
         .footer-links a:hover {
             color: var(--gold);
+            transform: translateX(5px);
         }
         
         .social-links {
             display: flex;
             gap: 1rem;
+            margin-top: 25px;
         }
         
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
+            border-radius: 0;
+            color: var(--white);
             transition: all 0.3s ease;
+            font-size: 1.2rem;
         }
         
         .social-links a:hover {
             background-color: var(--gold);
-            transform: translateY(-3px);
-        }
-        
-        .map-container {
-            margin-top: 2rem;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            color: var(--black);
         }
         
         .copyright {
             text-align: center;
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: #aaa;
+            color: #777;
+            font-size: 1rem;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
-        /* RESPONSIVE */
-        @media (max-width: 1200px) {
-            .header-container {
-                justify-content: space-between;
-            }
-            
-            nav ul {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
         }
         
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--black);
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+        
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            margin: 20px;
+            border-left: 4px solid var(--gold);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--black);
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
             
-            .logo img {
-                height: 120px; /* Logo plus grand sur tablette */
+            .servizi-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             }
             
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-content::after {
-                left: -10px;
-                right: auto;
+            .galleria-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
         }
         
         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 8px 15px;
+            }
+            
             .hero {
-                height: 60vh;
+                padding: 120px 0;
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
-            section {
-                padding: 3rem 1.5rem;
+            .section-title h2 {
+                font-size: 2.2rem;
             }
             
-            .logo img {
-                height: 100px; /* Logo plus grand sur mobile */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .servizio-contatti {
+                flex-direction: column;
+                gap: 15px;
             }
         }
         
         @media (max-width: 576px) {
-            .header-container {
-                padding: 0 1rem;
-            }
-            
-            .logo-text {
-                font-size: 1.5rem;
-            }
-            
-            .hero {
-                padding: 0 1rem;
-                height: 50vh;
-            }
-            
             .hero h1 {
                 font-size: 2rem;
             }
             
-            .section-title h2 {
-                font-size: 2rem;
+            .btn {
+                padding: 14px 30px;
+                font-size: 1rem;
             }
             
-            .logo img {
-                height: 80px; /* Logo très grand sur petits mobiles */
+            .servizi-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .galleria-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-contatti {
+                padding: 30px 20px;
+            }
+            
+            .vantaggio {
+                padding: 40px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- Header -->
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="https://static.wixstatic.com/media/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png/v1/fill/w_1110,h_638,al_c,q_90,enc_avif,quality_auto/5e3e4d_2fb58a2441df4938a5fe851b5f1326f6~mv2.png" alt="Ali Esteki Carpets Logo">
-                <div class="logo-text"></div>
-            </div>
-            <nav>
-                <ul>
-                     <li><a href="index.html">Home</a></li>
-                     <li><a href="About us.html">Chi Siamo</a></li>
-                     <li><a href="Prodotti.html"> Prodotti </a></li>
-                     <li><a href="lavaggio e restauro.html"> Lavaggio e restauro </a></li>
-                     <li><a href="contact.html">Contatti</a></li>
-                     <li><a href="faq.html"> Faq</a></li>
-                </ul>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.jpeg" alt="Restauro Lavaggio Tappeti">
                 </div>
-            </nav>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About us.html">Chi Siamo</a></li>
+                        <li><a href="Prodotti.html">Prodotti</a></li>
+                        <li><a href="lavaggio e restauro.html">Lavaggio e Restauro</a></li>
+                        <li><a href="contact.html">Contatti</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- MOBILE NAVIGATION -->
-    <div class="mobile-nav" id="mobileNav">
-        <div class="close-menu" id="closeMenu">
-            <i class="fas fa-times"></i>
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="About us.html">Chi Siamo</a></li>
-            <li><a href="Prodotti.html"> Prodotti </a></li>
-            <li><a href="lavaggio e restauro.html"> Lavaggio e restauro </a></li>
-            <li><a href="contact.html">Contatti</a></li>
-            <li><a href="faq.html"> Faq</a></li>
-        </ul>
-    </div>
-    <div class="overlay" id="overlay"></div>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>La Nostra Storia</h1>
-            <p>Quarant'anni di passione per l'arte del tappeto orientale</p>
-            <a href="#story" class="btn btn-gold">Scopri di Più</a>
-        </div>
-    </section>
-
-    <!-- ABOUT INTRO -->
-    <section class="about-intro" id="story">
-        <div class="intro-content">
-            <h2 class="section-title">La Nostra Missione</h2>
-            <p>Da oltre quarant'anni, Ali Esteki Carpets rappresenta un punto di riferimento ad Ancona per gli amanti dei tappeti orientali. La nostra missione è preservare e promuovere l'antica arte della tessitura dei tappeti, unendo tradizione secolare e modernità.</p>
-            
-            <p>Ci impegniamo a selezionare solo tappeti di altissima qualità, ciascuno con una storia unica da raccontare. Ogni pezzo nella nostra collezione è stato creato con maestria da artigiani esperti che tramandano tecniche antiche di generazione in generazione.</p>
-            
-            <p>Il nostro showroom di Via Marconi 2 ad Ancona non è semplicemente un negozio, ma un vero e proprio museo vivente dove i clienti possono immergersi nella cultura e nella bellezza dei tappeti orientali, ricevendo al tempo stesso una consulenza esperta e personalizzata.</p>
-            
-            <p>Crediamo che un tappeto non sia solo un complemento d'arredo, ma un'opera d'arte che porta con sé secoli di storia, cultura e tradizione. Per questo ci dedichiamo con passione alla ricerca di pezzi unici e alla conservazione di questo patrimonio artistico.</p>
-        </div>
-    </section>
-
-    <!-- TIMELINE -->
-    <section>
-        <div class="section-title">
-            <h2>La Nostra Storia</h2>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">1979</div>
-                    <h3>Fondazione</h3>
-                    <p>Ali Esteki apre il suo primo negozio di tappeti orientali ad Ancona, portando con sé la tradizione di famiglia e la passione per l'artigianato persiano.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">1995</div>
-                    <h3>Espansione</h3>
-                    <p>Il negozio si trasferisce in una sede più ampia in Via Marconi, diventando un punto di riferimento per gli appassionati di tappeti in tutta la regione Marche.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">2005</div>
-                    <h3>Riconoscimenti</h3>
-                    <p>Ali Esteki Carpets riceve il premio "Eccellenza nell'Artigianato" per il contributo alla preservazione delle tradizioni tessili orientali in Italia.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">2018</div>
-                    <h3>Nuova Generazione</h3>
-                    <p>I figli di Ali entrano a far parte dell'azienda, portando nuove energie e competenze mentre preservano i valori tradizionali dell'impresa familiare.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">2025</div>
-                    <h3> 45 Anni di Eccellenza</h3>
-                    <p>Celebriamo quattro decenni di passione per i tappeti orientali, consolidando la nostra reputazione come il più importante negozio di tappeti delle Marche.</p>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Restauro e Lavaggio Professionale di Tappeti</h1>
+                <p>Riportiamo alla luce la bellezza dei tuoi tappeti con tecniche all'avanguardia e prodotti ecologici. Servizi professionali per privati e aziende.</p>
+                <a href="#contatti" class="btn">Richiedi un Preventivo Gratuito</a>
             </div>
         </div>
     </section>
 
-    <!-- VALUES -->
-    <section>
-        <div class="section-title">
-            <h2>I Nostri Valori</h2>
-        </div>
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <h3>Onestà e Trasparenza</h3>
-                <p>Crediamo nella trasparenza assoluta con i nostri clienti. Ogni tappeto è accompagnato da un certificato di autenticità e da una storia completa della sua provenienza.</p>
+    <!-- Servizi -->
+    <section class="servizi" id="servizi">
+        <div class="container">
+            <div class="section-title">
+                <h2>I Nostri Servizi</h2>
+                <p>Offriamo una gamma completa di servizi per la cura e il restauro dei tuoi tappeti</p>
             </div>
-            <div class="value-card">
-                <div class="value-icon">
+            <div class="servizi-grid">
+                <!-- Primo prodotto originale -->
+                <div class="servizio-card">
+                    <div class="servizio-img" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.artedelrestaurotappeti.it%2Fimg%2Fcontent%2F2000%2Flavaggio-tappeti-manuale-acqua-2.webp&f=1&nofb=1&ipt=c25bf68eb984ef1d58b0af5f042d23053e7924660eb2bd092affa26077ce3d52');"></div>
+                    <div class="servizio-content">
+                        <h3>Lavaggio Tappeti</h3>
+                        <p>Pulizia profonda con macchinari professionali che rimuovono sporco, acari e batteri senza danneggiare le fibre. Utilizziamo prodotti ecologici e sicuri.</p>
+                        <div class="servizio-contatti">
+                            <a href="tel:+39071206066" class="servizio-contatto">
+                                <i class="fas fa-phone"></i> +39 071206066
+                            </a>
+                            <a href="https://wa.me/393408105898" class="servizio-contatto">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Secondo prodotto originale -->
+                <div class="servizio-card">
+                    <div class="servizio-img" style="background-image: url('https://tse1.mm.bing.net/th/id/OIP.eRJvfOKXPmJYg8OonuwT_AHaE8?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3');"></div>
+                    <div class="servizio-content">
+                        <h3>Restauro Tappeti Antichi</h3>
+                        <p>Recuperiamo e restauriamo tappeti di valore con tecniche tradizionali e grande attenzione ai dettagli. Ripristiniamo tappeti danneggiati dal tempo e dall'usura.</p>
+                        <div class="servizio-contatti">
+                            <a href="tel:+39071206036" class="servizio-contatto">
+                                <i class="fas fa-phone"></i> +39 071206036
+                            </a>
+                            <a href="https://wa.me/393408105898" class="servizio-contatto">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Terzo prodotto originale -->
+                <div class="servizio-card">
+                    <div class="servizio-img" style="background-image: url('https://tse1.mm.bing.net/th/id/OIP.6uJ8x6X8QxGJQ1VWqPqB8gHaE8?w=256&h=180&c=7&r=0&o=5&pid=1.7');"></div>
+                    <div class="servizio-content">
+                        <h3>Trattamento Antiacaro</h3>
+                        <p>Servizio specializzato per eliminare acari e allergeni, ideale per famiglie con bambini o persone con allergie. Garantiamo un ambiente più sano e pulito.</p>
+                        <div class="servizio-contatti">
+                            <a href="tel:+393408105898" class="servizio-contatto">
+                                <i class="fas fa-phone"></i> +39 3408105898
+                            </a>
+                            <a href="https://wa.me/393408105898" class="servizio-contatto">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quarto prodotto originale -->
+                <div class="servizio-card">
+                    <div class="servizio-img" style="background-image: url('https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1744&q=80');"></div>
+                    <div class="servizio-content">
+                        <h3>Lavaggio Moquette</h3>
+                        <p>Pulizia professionale di moquette e tappezzeria con tecniche avanzate che garantiscono risultati ottimali senza danneggiare le fibre.</p>
+                        <div class="servizio-contatti">
+                            <a href="tel:+39071206066" class="servizio-contatto">
+                                <i class="fas fa-phone"></i> +39 071206066
+                            </a>
+                            <a href="https://wa.me/393408105898" class="servizio-contatto">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galleria Tapeti Moderni -->
+    <section class="galleria" id="galleria">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tappeti Moderni</h2>
+                <p>Scopri la nostra collezione di tappeti moderni che uniscono design contemporaneo e qualità artigianale</p>
+            </div>
+            <div class="galleria-grid">
+                <div class="galleria-item">
+                    <img src="moderno1.jpg" alt="Tappeto Moderno 1">
+                    <div class="galleria-overlay">
+                        <h3>Tappeto Contemporaneo</h3>
+                        <p>Design minimalista e colori neutri</p>
+                    </div>
+                </div>
+                <div class="galleria-item">
+                    <img src="moderno2.jpg" alt="Tappeto Moderno 2">
+                    <div class="galleria-overlay">
+                        <h3>Tappeto Geometrico</h3>
+                        <p>Forme geometriche e pattern audaci</p>
+                    </div>
+                </div>
+                <div class="galleria-item">
+                    <img src="moderno3.jpg" alt="Tappeto Moderno 3">
+                    <div class="galleria-overlay">
+                        <h3>Tappeto Scultoreo</h3>
+                        <p>Texture tridimensionale e materiali innovativi</p>
+                    </div>
+                </div>
+                <div class="galleria-item">
+                    <img src="moderno4.jpg" alt="Tappeto Moderno 4">
+                    <div class="galleria-overlay">
+                        <h3>Tappeto Astratto</h3>
+                        <p>Composizione artistica e colori vivaci</p>
+                    </div>
+                </div>
+                <div class="galleria-item">
+                    <img src="moderno5.jpg" alt="Tappeto Moderno 5">
+                    <div class="galleria-overlay">
+                        <h3>Tappeto Minimal</h3>
+                        <p>Linee pulite e eleganza essenziale</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perché Sceglierci -->
+    <section class="perche-sceglierci" id="perche-sceglierci">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perché Scegliere Restauro Lavaggio Tappeti</h2>
+                <p>Eccellenza e professionalità al servizio dei tuoi tappeti</p>
+            </div>
+            <div class="vantaggi">
+                <div class="vantaggio">
+                    <i class="fas fa-microscope"></i>
+                    <h3>Tecnologia Avanzata</h3>
+                    <p>Utilizziamo macchinari all'avanguardia e prodotti ecologici per risultati impeccabili e duraturi.</p>
+                </div>
+                <div class="vantaggio">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Esperienza e Professionalità</h3>
+                    <p>Team specializzato con anni di esperienza nel settore del restauro e lavaggio tappeti.</p>
+                </div>
+                <div class="vantaggio">
+                    <i class="fas fa-truck"></i>
+                    <h3>Servizio a Domicilio</h3>
+                    <p>Ritiro e consegna a domicilio in tutta la città per la massima comodità dei nostri clienti.</p>
+                </div>
+                <div class="vantaggio">
                     <i class="fas fa-award"></i>
-                </div>
-                <h3>Qualità Suprema</h3>
-                <p>Selezioniamo solo tappeti di altissima qualità, realizzati con materiali pregiati e tecniche di tessitura tradizionali che garantiscono durabilità e bellezza senza tempo.</p>
-            </div>
-            <div class="value-card">
-                <div class="value-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h3>Passione Autentica</h3>
-                <p>La nostra è una passione che dura da generazioni. Amiamo ciò che facciamo e ci impegniamo a condividere questa passione con ogni cliente che entra nel nostro negozio.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section>
-        <div class="section-title">
-            <h2>Il Nostro Mondo</h2>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="entree.png" alt="Showroom">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                       
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t1.6435-9/52927566_2145369475675714_5024651702372925440_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fwa0_htiOU0Q7kNvwHb3XP3&_nc_oc=AdnEUXqc22QSFaPKbu8koQ73Ly8AaBpJ7SDso2NArulAffb4icbhmCteDOnVedbGO9o&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=vHIlfPFAxnWasip6s8m6iA&oh=00_AfhDSSngH_HMtxzkXO2KTHKPqpoI62n3H9SbO168KUOH6A&oe=6937D3A8" alt="Tappeti Artigianali">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                    
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/489378803_1217916070341535_4344005778653673566_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=WFJNlr8z7ykQ7kNvwGV9_SA&_nc_oc=Adk5juD8ysDCGrXJxsU9VnaFB7VLum8udl08cVEDnGeLnfL_XQCPhxSNz8WqeFja130&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=iL0LmnObS_elTVap1Ca2Lw&oh=00_Afg4mt7RNZN2CoRshlHWIcxjteWiH3AZb3c_DJCv-ersGg&oe=69255F1F" alt="Restauro">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                      
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/468396711_18376162771111902_6251006474648516185_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=EA84orEgrkYQ7kNvwHyY-ft&_nc_oc=AdnPI6sJdKD6_Fy4s9lY3k4-c2LJT9nElVNifvkHGTFXU5c0MpZsRUfCzsyst-3qnIo&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=E6MX6urrTMePr0WA5s_zAw&oh=00_Afgiaxq_cHg385m3XgtoUUEA3qQEU7iLddFGjiBmHt0Neg&oe=6925530D" alt="Consulenza">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-          
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-     <section>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/495567316_3793951364150842_5016137914062506969_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=NQ1OwLOacOEQ7kNvwFiy9PS&_nc_oc=Adnl-p58Hl-PmUKYiIwrcH_KOcuX-R0IhT8pa5h2uYTi-MV2S0o8iaS6MiUQjsWvXxg&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=WVd1zNpzDU7ht12LGRKvEQ&oh=00_AfjhdOuBcWY2GPu8PTNKJzrmjQtWAzi6MrRO3S9jFl5tIQ&oe=691656DA" alt="Showroom">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                       
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/482201564_1185255743607568_6271538281144989427_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=22y4ZRJE_nkQ7kNvwGMwTMe&_nc_oc=AdlDCNYzevL9EHLq71b3T9AOrziSeJUvguwK4nm8kh6qHkcMUN4TsQt_vc6wR2sAYok&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=JwLunc1KNLBAxv13SbfmeA&oh=00_AfjnPvLxxboXNUVz39RH3K_h4wXlrrTaMHnhdY6pRowqxA&oe=6925616A" alt="Tappeti Artigianali">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                    
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/495548727_1247738234025985_8142478493187048738_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=uObna8_SZ70Q7kNvwEzFAra&_nc_oc=AdnM5wLS-l1UIDjIyKAQ72JAcrO8Kutur_DyCforF60Iwn2TquUfCFiXwAjOJefO15c&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=XbcTnUj7XpxfbKsxaiF3Dg&oh=00_AfjWBxjXf5JZmUvGXa76q5NWL4NMuVWFgyvjLzA6-oYYYg&oe=69255136" alt="Restauro">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-                      
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="moderno1.jpg" alt="Consulenza">
-                <div class="gallery-overlay">
-                    <div class="gallery-text">
-          
-                    </div>
+                    <h3>Garanzia Soddisfazione</h3>
+                    <p>Risultati garantiti e massima trasparenza nei preventivi e nelle lavorazioni.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT CTA -->
-    <section class="contact-cta">
-        <div class="cta-content">
-            <h2>Pronto a Scoprire il Tappeto Perfetto?</h2>
-            <p>Visita il nostro showroom ad Ancona o contattaci per una consulenza personalizzata. Il nostro team di esperti sarà lieto di guidarti nella scelta del tappeto che trasformerà i tuoi spazi.</p>
-            <a href="contact.html" class="btn btn-gold">Contattaci Oggi</a>
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cosa Dicono i Nostri Clienti</h2>
+                <p>La soddisfazione dei nostri clienti è la nostra migliore pubblicità</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Ho portato il mio tappeto persiano di famiglia, rovinato da anni di utilizzo, e l'hanno restituito come nuovo. Servizio eccellente e personale molto competente."</p>
+                    <p class="testimonial-author">- Maria Rossi</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- Contatti -->
+    <section class="contatti" id="contatti">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contattaci</h2>
+                <p>Richiedi un preventivo gratuito e senza impegno</p>
+            </div>
+            <div class="contatti-content">
+                <div class="info-contatti">
+                    <h3>Informazioni di Contatto</h3>
+                    <div class="info-contatto">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Telefono</h4>
+                            <p>+39 071206066</p>
+                            <p>+39 071206036</p>
+                            <p>+39 3408105898</p>
+                        </div>
+                    </div>
+                    <div class="info-contatto">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Email</h4>
+                            <p>aliestekicarpets@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-contatto">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Indirizzo</h4>
+                            <p>Via Guglielmo Marconi, 2, 60125 Ancona AN</p>
+                        </div>
+                    </div>
+                    <div class="info-contatto">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Orari</h4>
+                            <p>Lun-Ven: 8:00-19:00 | Sab: 8:00-13:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-contatti">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nome e Cognome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Descrivi il tuo tappeto e le tue esigenze" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-invia">Invia Richiesta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>Ali Esteki Carpets</h3>
-                <p>Da oltre quarant'anni, portiamo l'arte e la tradizione dei tappeti orientali in Italia, con passione e competenza.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/aliestekicarpets/"><i class="fab fa-facebook-f"></i></a>
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/channel/UCi-yISfJFJs4pGN95eoL7Nw"><i class="fab fa-youtube"></i></a>
-                    <a href="https://wa.me/393408105898"><i class="fab fa-whatsapp"></i></a>
-
-                </div>
-            </div>
-            <div class="footer-column">
-                <h3>Link Veloci</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Chi Siamo</a></li>
-                    <li><a href="products.html">Prodotti</a></li>
-                    <li><a href="services.html">Servizi</a></li>
-                    <li><a href="contact.html">Contatti</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Servizi</h3>
-                <ul class="footer-links">
-                    <li><a href="services.html">Vendita Tappeti</a></li>
-                    <li><a href="services.html">Restauro</a></li>
-                    <li><a href="services.html">Pulizia Professionale</a></li>
-                    <li><a href="services.html">Valutazione</a></li>
-                    <li><a href="services.html">Consulenza</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contatti</h3>
-                <div class="contact-details">
-                    <div class="contact-detail">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Via Guglielmo Marconi, 2, 60125 Ancona AN, Italia</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo.jpeg" alt="Restauro Lavaggio Tappeti">
                     </div>
-                    <div class="contact-detail">
-                        <i class="fas fa-phone"></i>
-                        <p>+39 071206066 </p>
-                        <p>+39 071206036</p>
-                        <p>+39 3408105898</p>
-                    </div>
-                    <div class="contact-detail">
-                        <i class="fas fa-envelope"></i>
-                        <p>aliestekicarpets@gmail.com</p>
+                    <p>Servizi professionali di lavaggio e restauro tappeti per privati e aziende. Qualità, esperienza e risultati garantiti.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/aliestekicarpets/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/aliestekicarpets/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@TappetiPersiani"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/393408105898"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
+                <div class="footer-col">
+                    <h4>Link Veloci</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About us.html">Chi Siamo</a></li>
+                        <li><a href="Prodotti.html">Prodotti</a></li>
+                        <li><a href="lavaggio e restauro.html">Lavaggio e Restauro</a></li>
+                        <li><a href="contact.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Servizi</h4>
+                    <ul class="footer-links">
+                        <li><a href="lavaggio e restauro.html">Lavaggio Tappeti</a></li>
+                        <li><a href="lavaggio e restauro.html">Restauro Tappeti Antichi</a></li>
+                        <li><a href="lavaggio e restauro.html">Trattamento Antiacaro</a></li>
+                        <li><a href="lavaggio e restauro.html">Lavaggio Moquette</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contatti</h4>
+                    <h5>Email</h5>
+                    <p>aliestekicarpets@gmail.com</p>
+                    <h5>Telefono</h5>
+                    <p>+39 071206066</p>
+                    <p>+39 071206036</p>
+                    <p>+39 3408105898</p>
+                </div>
             </div>
-        </div>
-        
-        <!-- MAP -->
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.7030487255915!2d13.501741975561163!3d43.612724171103956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132d7f993a2f85ff%3A0x74092795d89cac0!2sAli%20Esteki%20Carpets!5e0!3m2!1sit!2sit!4v1762599965181!5m2!1sit!2sit" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2023 Ali Esteki Carpets. Tutti i diritti riservati.</p>
+            <div class="copyright">
+                <p>© 1979 Aliesteki . Tutti i diritti riservati.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+
     <script>
-        // Mobile Menu
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileNav = document.getElementById('mobileNav');
-        const closeMenu = document.getElementById('closeMenu');
-        const overlay = document.getElementById('overlay');
-
-        mobileMenu.addEventListener('click', function() {
-            mobileNav.classList.add('active');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
         });
-
-        closeMenu.addEventListener('click', function() {
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        overlay.addEventListener('click', function() {
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        // Close mobile menu when clicking on a link
-        const mobileLinks = document.querySelectorAll('.mobile-nav a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileNav.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
-
-        // Scroll animations
-        function isElementInViewport(el) {
-            const rect = el.getBoundingClientRect();
-            return (
-                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
-                rect.bottom >= 0
-            );
-        }
-
-        function handleScroll() {
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            const valueCards = document.querySelectorAll('.value-card');
-            const teamMembers = document.querySelectorAll('.team-member');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            
-            timelineItems.forEach(item => {
-                if (isElementInViewport(item)) {
-                    item.classList.add('visible');
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Grazie per la tua richiesta! Ti contatteremo al più presto.');
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
                 }
             });
-            
-            valueCards.forEach(card => {
-                if (isElementInViewport(card)) {
-                    card.classList.add('visible');
-                }
-            });
-            
-            teamMembers.forEach(member => {
-                if (isElementInViewport(member)) {
-                    member.classList.add('visible');
-                }
-            });
-            
-            galleryItems.forEach(item => {
-                if (isElementInViewport(item)) {
-                    item.classList.add('visible');
-                }
-            });
-        }
-
-        // Initial check
-        window.addEventListener('load', handleScroll);
-        // Check on scroll
-        window.addEventListener('scroll', handleScroll);
+        });
 
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
-            if(window.scrollY > 100) {
-                header.style.padding = '0.5rem 2rem';
-                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.2)';
+            if (window.scrollY > 50) {
+                header.style.padding = '10px 0';
             } else {
-                header.style.padding = '1rem 2rem';
-                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.2)';
+                header.style.padding = '20px 0';
             }
         });
     </script>
 </body>
 </html>
+
 
 
