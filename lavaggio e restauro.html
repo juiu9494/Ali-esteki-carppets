@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restauro Lavaggio Tappeti - Pulizia Professionale di Tappeti e Moquette</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset e stili generali */
         * {
@@ -13,10 +14,18 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
+        :root {
+            --gold: #ffd700;
+            --black: #000000;
+            --white: #ffffff;
+            --light-gray: #f9f9f9;
+            --dark-gray: #333333;
+        }
+        
         body {
             line-height: 1.6;
-            color: #333;
-            background-color: #ffffff;
+            color: var(--dark-gray);
+            background-color: var(--white);
             overflow-x: hidden;
         }
         
@@ -29,7 +38,7 @@
         
         /* Header */
         header {
-            background-color: #000000;
+            background-color: var(--black);
             box-shadow: 0 2px 20px rgba(0,0,0,0.2);
             position: sticky;
             top: 0;
@@ -71,14 +80,14 @@
         
         nav ul li a {
             text-decoration: none;
-            color: #ffffff;
+            color: var(--white);
             font-weight: 500;
             transition: color 0.3s;
             padding: 5px 0;
         }
         
         nav ul li a:hover {
-            color: #ffd700;
+            color: var(--gold);
         }
         
         nav ul li a::after {
@@ -88,7 +97,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: #ffd700;
+            background-color: var(--gold);
             transition: width 0.3s;
         }
         
@@ -102,7 +111,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: rgb(255, 255, 255);
+            color: var(--white);
             text-align: center;
             padding: 150px 0;
             position: relative;
@@ -134,21 +143,21 @@
         
         .btn {
             display: inline-block;
-            background-color: #ffd700;
-            color: #000000;
+            background-color: var(--gold);
+            color: var(--black);
             padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s;
             font-size: 1.1rem;
-            border: 2px solid #ffd700;
+            border: 2px solid var(--gold);
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
         
         .btn:hover {
             background-color: transparent;
-            color: #ffd700;
+            color: var(--gold);
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
         }
@@ -156,7 +165,7 @@
         /* Servizi */
         .servizi {
             padding: 100px 0;
-            background-color: #f9f9f9;
+            background-color: var(--light-gray);
         }
         
         .section-title {
@@ -166,7 +175,7 @@
         
         .section-title h2 {
             font-size: 2.5rem;
-            color: #000000;
+            color: var(--black);
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
@@ -177,7 +186,7 @@
             position: absolute;
             width: 80px;
             height: 4px;
-            background: #ffd700;
+            background: var(--gold);
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
@@ -197,7 +206,7 @@
         }
         
         .servizio-card {
-            background-color: #ffffff;
+            background-color: var(--white);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -228,7 +237,7 @@
         
         .servizio-content h3 {
             margin-bottom: 15px;
-            color: #000000;
+            color: var(--black);
             font-size: 1.4rem;
         }
         
@@ -239,7 +248,7 @@
         }
         
         .servizio-link {
-            color: #000000;
+            color: var(--black);
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
@@ -248,7 +257,7 @@
         }
         
         .servizio-link:hover {
-            color: #ffd700;
+            color: var(--gold);
         }
         
         .servizio-link::after {
@@ -264,7 +273,7 @@
         /* Galleria */
         .galleria {
             padding: 80px 0;
-            background-color: #ffffff;
+            background-color: var(--white);
         }
         
         .galleria-grid {
@@ -302,12 +311,12 @@
         /* Perché Sceglierci */
         .perche-sceglierci {
             padding: 100px 0;
-            background: linear-gradient(135deg, #000000 0%, #333333 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
         }
         
         .perche-sceglierci .section-title h2 {
-            color: white;
+            color: var(--white);
         }
         
         .perche-sceglierci .section-title p {
@@ -340,11 +349,12 @@
             font-size: 3.5rem;
             margin-bottom: 20px;
             display: block;
+            color: var(--gold);
         }
         
         .vantaggio h3 {
             margin-bottom: 15px;
-            color: #ffd700;
+            color: var(--gold);
             font-size: 1.4rem;
         }
         
@@ -356,7 +366,7 @@
         /* Contatti */
         .contatti {
             padding: 100px 0;
-            background-color: #f9f9f9;
+            background-color: var(--light-gray);
         }
         
         .contatti-content {
@@ -371,7 +381,7 @@
         
         .info-contatti h3 {
             margin-bottom: 25px;
-            color: #000000;
+            color: var(--black);
             font-size: 1.6rem;
             position: relative;
             display: inline-block;
@@ -382,7 +392,7 @@
             position: absolute;
             width: 50px;
             height: 3px;
-            background: #ffd700;
+            background: var(--gold);
             bottom: -8px;
             left: 0;
         }
@@ -396,18 +406,19 @@
         .info-icon {
             width: 50px;
             height: 50px;
-            background: #ffd700;
+            background: var(--gold);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 15px;
             flex-shrink: 0;
+            color: var(--black);
         }
         
         .info-text h4 {
             margin-bottom: 5px;
-            color: #000000;
+            color: var(--black);
         }
         
         .info-text p {
@@ -415,7 +426,7 @@
         }
         
         .form-contatti {
-            background: white;
+            background: var(--white);
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -437,7 +448,7 @@
         
         .form-contatti input:focus,
         .form-contatti textarea:focus {
-            border-color: #ffd700;
+            border-color: var(--gold);
             box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
             outline: none;
         }
@@ -448,8 +459,8 @@
         }
         
         .btn-invia {
-            background-color: #000000;
-            color: white;
+            background-color: var(--black);
+            color: var(--white);
             border: none;
             padding: 15px 35px;
             border-radius: 50px;
@@ -461,16 +472,16 @@
         }
         
         .btn-invia:hover {
-            background-color: #ffd700;
-            color: #000000;
+            background-color: var(--gold);
+            color: var(--black);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         /* Footer */
         footer {
-            background-color: #000000;
-            color: rgb(255, 255, 255);
+            background-color: var(--black);
+            color: var(--white);
             padding: 60px 0 20px;
         }
         
@@ -482,7 +493,7 @@
         }
         
         .footer-col h4 {
-            color: #ffd700;
+            color: var(--gold);
             margin-bottom: 20px;
             font-size: 1.2rem;
             position: relative;
@@ -494,7 +505,7 @@
             position: absolute;
             width: 40px;
             height: 2px;
-            background: #ffd700;
+            background: var(--gold);
             bottom: -8px;
             left: 0;
         }
@@ -532,13 +543,13 @@
         }
         
         .footer-links a:hover {
-            color: #ffd700;
+            color: var(--gold);
             transform: translateX(5px);
         }
         
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 1rem;
             margin-top: 20px;
         }
         
@@ -548,17 +559,15 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.1);
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
+            color: var(--white);
+            transition: all 0.3s ease;
         }
         
         .social-links a:hover {
-            background: #ffd700;
-            color: #000000;
-            transform: translateY(-5px);
+            background-color: var(--gold);
+            transform: translateY(-3px);
         }
         
         .copyright {
@@ -576,8 +585,8 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background: #ffd700;
-            color: #000000;
+            background: var(--gold);
+            color: var(--black);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -597,9 +606,41 @@
         }
         
         .back-to-top:hover {
-            background: #000000;
-            color: #ffd700;
+            background: var(--black);
+            color: var(--gold);
             transform: translateY(-5px);
+        }
+        
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            margin: 20px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--black);
         }
         
         /* Responsive */
@@ -670,6 +711,10 @@
             .galleria-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
+            
+            .form-contatti {
+                padding: 25px;
+            }
         }
     </style>
 </head>
@@ -716,7 +761,7 @@
             </div>
             <div class="servizi-grid">
                 <div class="servizio-card">
-                    <div class="servizio-img" style="background-image: url('https://adamellotappeti.it/wp-content/uploads/2019/09/guide-to-washing-carpet-at-home-Copy.jpg');"></div>
+                    <div class="servizio-img" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.artedelrestaurotappeti.it%2Fimg%2Fcontent%2F2000%2Flavaggio-tappeti-manuale-acqua-2.webp&f=1&nofb=1&ipt=c25bf68eb984ef1d58b0af5f042d23053e7924660eb2bd092affa26077ce3d52');"></div>
                     <div class="servizio-content">
                         <h3>Lavaggio Tappeti</h3>
                         <p>Pulizia profonda con macchinari professionali che rimuovono sporco, acari e batteri senza danneggiare le fibre. Utilizziamo prodotti ecologici e sicuri.</p>
@@ -724,7 +769,7 @@
                     </div>
                 </div>
                 <div class="servizio-card">
-                    <div class="servizio-img" style="background-image: url('https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/495498420_3793951647484147_2567360856180353389_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=18W9fAHcY1cQ7kNvwGbRIH1&_nc_oc=Adlj8uGLLjbeVamX--7fG_VYdu2MTJstRFYGnHqmDq5x1qvFUqWutgT8ad1IIUcK7Fg&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=aBMqsC45JR9IEeGtK6NZnw&oh=00_AfizAH0aJiCQGRmh82iRleW_0EJbVdESEAhEjLyiFXcWdA&oe=691FF592');"></div>
+                    <div class="servizio-img" style="background-image: url('https://tse1.mm.bing.net/th/id/OIP.eRJvfOKXPmJYg8OonuwT_AHaE8?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3');"></div>
                     <div class="servizio-content">
                         <h3>Restauro Tappeti Antichi</h3>
                         <p>Recuperiamo e restauriamo tappeti di valore con tecniche tradizionali e grande attenzione ai dettagli. Ripristiniamo tappeti danneggiati dal tempo e dall'usura.</p>
@@ -732,36 +777,12 @@
                     </div>
                 </div>
                 <div class="servizio-card">
-                    <div class="servizio-img" style="background-image: url('https://tse1.mm.bing.net/th/id/OIP.eRJvfOKXPmJYg8OonuwT_AHaE8?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3');"></div>
+                    <div class="servizio-img" style="background-image: url('https://tse1.mm.bing.net/th/id/OIP.6uJ8x6X8QxGJQ1VWqPqB8gHaE8?w=256&h=180&c=7&r=0&o=5&pid=1.7');"></div>
                     <div class="servizio-content">
-                        <h3>Lavaggio Moquette</h3>
-                        <p>Pulizia professionale di moquette e tappezzerie con prodotti specifici per ogni tipo di fibra. Rimozione di macchie difficili e igienizzazione profonda.</p>
+                        <h3>Trattamento Antiacaro</h3>
+                        <p>Servizio specializzato per eliminare acari e allergeni, ideale per famiglie con bambini o persone con allergie. Garantiamo un ambiente più sano e pulito.</p>
                         <a href="#" class="servizio-link">Scopri di più</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galleria -->
-    <section class="galleria">
-        <div class="container">
-            <div class="section-title">
-                <h2>La Nostra Galleria</h2>
-                <p>Alcuni esempi dei nostri lavori di restauro e lavaggio</p>
-            </div>
-            <div class="galleria-grid">
-                <div class="galleria-item">
-                    <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t1.6435-9/52927566_2145369475675714_5024651702372925440_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=BIAIJh32Pu8Q7kNvwFGLELI&_nc_oc=AdkSOmpIGnLn2_m2jZubNjDJeBagQcC3QAw4L90KZPU2nF_SKDkb9wp5z9hZzrhldVA&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=k9Qyt3-L9N0kxARgXO28Yw&oh=00_Afi0EL4DXcFnHQnGeKsGGCW__30zu9NQvCdVadBdRAScKw&oe=6941B6E8" alt="Lavoro di restauro 1">
-                </div>
-                <div class="galleria-item">
-                    <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/495567316_3793951364150842_5016137914062506969_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=i7jUiaxnsU4Q7kNvwHl1oQw&_nc_oc=AdmvULqUzgc3l0i3t_EWJVnkiKJ4uNPB7ItBB-yH3r6qlXm0TCMVV6IUHO1WOPkV-JI&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=qI3Gi1eW8VuC5PITdhRIZg&oh=00_Afh3ST4Nn68ONXSoOfVPXhGnMlhYiMUmHhjud2GyzW6qEA&oe=692001DA" alt="Lavoro di restauro 2">
-                </div>
-                <div class="galleria-item">
-                    <img src="https://scontent.fflr2-1.fna.fbcdn.net/v/t39.30808-6/495498420_3793951647484147_2567360856180353389_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=18W9fAHcY1cQ7kNvwGbRIH1&_nc_oc=Adlj8uGLLjbeVamX--7fG_VYdu2MTJstRFYGnHqmDq5x1qvFUqWutgT8ad1IIUcK7Fg&_nc_zt=23&_nc_ht=scontent.fflr2-1.fna&_nc_gid=aBMqsC45JR9IEeGtK6NZnw&oh=00_AfizAH0aJiCQGRmh82iRleW_0EJbVdESEAhEjLyiFXcWdA&oe=691FF592" alt="Lavoro di restauro 3">
-                </div>
-                <div class="galleria-item">
-                    <img src="https://tse3.mm.bing.net/th/id/OIP.2QbBiR19dIN6Xw0KSBqs7AHaE6?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Lavoro di restauro 4">
                 </div>
             </div>
         </div>
@@ -776,24 +797,40 @@
             </div>
             <div class="vantaggi">
                 <div class="vantaggio">
-                    <i>🔬</i>
+                    <i class="fas fa-microscope"></i>
                     <h3>Tecnologia Avanzata</h3>
                     <p>Utilizziamo macchinari all'avanguardia e prodotti ecologici per risultati impeccabili e duraturi.</p>
                 </div>
                 <div class="vantaggio">
-                    <i>👨‍🔧</i>
+                    <i class="fas fa-user-tie"></i>
                     <h3>Esperienza e Professionalità</h3>
                     <p>Team specializzato con anni di esperienza nel settore del restauro e lavaggio tappeti.</p>
                 </div>
                 <div class="vantaggio">
-                    <i>🚚</i>
+                    <i class="fas fa-truck"></i>
                     <h3>Servizio a Domicilio</h3>
                     <p>Ritiro e consegna a domicilio in tutta la città per la massima comodità dei nostri clienti.</p>
                 </div>
                 <div class="vantaggio">
-                    <i>💯</i>
+                    <i class="fas fa-award"></i>
                     <h3>Garanzia Soddisfazione</h3>
                     <p>Risultati garantiti e massima trasparenza nei preventivi e nelle lavorazioni.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cosa Dicono i Nostri Clienti</h2>
+                <p>La soddisfazione dei nostri clienti è la nostra migliore pubblicità</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Ho portato il mio tappeto persiano di famiglia, rovinato da anni di utilizzo, e l'hanno restituito come nuovo. Servizio eccellente e personale molto competente."</p>
+                    <p class="testimonial-author">- Maria Rossi</p>
                 </div>
             </div>
         </div>
@@ -810,31 +847,38 @@
                 <div class="info-contatti">
                     <h3>Informazioni di Contatto</h3>
                     <div class="info-contatto">
-                        <div class="info-icon">📞</div>
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
                         <div class="info-text">
                             <h4>Telefono</h4>
-                             <p>+39 071206066 </p>
-                             <p>+39 071206036</p>
-                             <p>+39 3408105898</p>
-                    </div>
+                            <p>+39 071206066</p>
+                            <p>+39 071206036</p>
+                            <p>+39 3408105898</p>
                         </div>
                     </div>
                     <div class="info-contatto">
-                        <div class="info-icon">✉️</div>
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
                         <div class="info-text">
                             <h4>Email</h4>
-                            <p>aliestekicarpets@gmail.com  </p>
+                            <p>aliestekicarpets@gmail.com</p>
                         </div>
                     </div>
                     <div class="info-contatto">
-                        <div class="info-icon">📍</div>
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
                         <div class="info-text">
                             <h4>Indirizzo</h4>
-                            <p> Via Guglielmo Marconi, 2, 60125 Ancona AN  </p>
+                            <p>Via Guglielmo Marconi, 2, 60125 Ancona AN</p>
                         </div>
                     </div>
                     <div class="info-contatto">
-                        <div class="info-icon">🕒</div>
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
                         <div class="info-text">
                             <h4>Orari</h4>
                             <p>Lun-Ven: 8:00-19:00 | Sab: 8:00-13:00</p>
@@ -872,9 +916,11 @@
                     </div>
                     <p>Servizi professionali di lavaggio e restauro tappeti per privati e aziende. Qualità, esperienza e risultati garantiti.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="https://www.instagram.com/aliestekicarpets/" aria-label="Instagram">ig</a>
-                        <a href="#" aria-label="tiktok">t</a>
+                        <a href="https://www.facebook.com/aliestekicarpets/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/aliestekicarpets/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@TappetiPersiani"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/393408105898"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -899,14 +945,12 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contatti</h4>
-                    <h5> Email </h5>
-                      <p>aliestekicarpets@gmail.com  </p>
+                    <h5>Email</h5>
+                    <p>aliestekicarpets@gmail.com</p>
                     <h5>Telefono</h5>
-                      <p>+39 071206066 </p>
-                      <p>+39 071206036</p>
-                      <p>+39 3408105898</p>
-                      
-                    </ul>
+                    <p>+39 071206066</p>
+                    <p>+39 071206036</p>
+                    <p>+39 3408105898</p>
                 </div>
             </div>
             <div class="copyright">
@@ -916,7 +960,7 @@
     </footer>
 
     <!-- Back to top button -->
-    <a href="#" class="back-to-top" id="backToTop">↑</a>
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
 
     <script>
         // Back to top button
@@ -964,7 +1008,19 @@
                 }
             });
         });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '5px 0';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
+            } else {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.2)';
+            }
+        });
     </script>
 </body>
-
 </html>
+
