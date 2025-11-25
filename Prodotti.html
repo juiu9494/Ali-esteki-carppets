@@ -337,6 +337,29 @@
             font-size: 1.3rem;
         }
         
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
         /* Perché Sceglierci */
         .perche-sceglierci {
             padding: 100px 0;
@@ -456,6 +479,16 @@
         .info-text p {
             color: #666;
             font-size: 1.1rem;
+        }
+        
+        .phone-link {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .phone-link:hover {
+            color: var(--gold);
         }
         
         .form-contatti {
@@ -801,48 +834,94 @@
     </section>
 
     <!-- Servizi -->
- 
-
-    <!-- Galleria Tapeti Moderni -->
-    <section class="galleria" id="galleria">
+    <section class="servizi" id="servizi">
         <div class="container">
             <div class="section-title">
-                <h2>Tappeti persiani </h2>
-                <p>Scopri la nostra collezione di tappeti persiani che uniscono design contemporaneo e qualità artigianale</p>
+                <h2>I Nostri Servizi</h2>
+                <p>Offriamo soluzioni complete per la cura e il restauro dei tuoi tappeti</p>
             </div>
-            <div class="galleria-grid">
-                <div class="galleria-item">
-                    <img src="product1.jpg" alt="Tappeto Moderno 1">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto saruk </h3>
-                        <p> 208x136 </p>
+            <div class="servizi-grid">
+                <div class="servizio-card">
+                    <div class="servizio-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="servizio-content">
+                        <h3>Lavaggio Professionale</h3>
+                        <p>Pulizia profonda con tecnologie all'avanguardia che rimuovono sporco, acari e batteri senza danneggiare le fibre.</p>
+                        <a href="lavaggio e restauro.html" class="servizio-link">Scopri di più</a>
                     </div>
                 </div>
-                <div class="galleria-item">
-                    <img src="product2.jpg" alt="Tappeto Moderno 2">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto mout </h3>
-                        <p> 202x145 </p>
+                <div class="servizio-card">
+                    <div class="servizio-img" style="background-image: url('https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="servizio-content">
+                        <h3>Restauro Tappeti Antichi</h3>
+                        <p>Ripristiniamo tappeti di valore con tecniche artigianali che rispettano l'originalità e l'integrità del manufatto.</p>
+                        <a href="lavaggio e restauro.html" class="servizio-link">Scopri di più</a>
                     </div>
                 </div>
-                <div class="galleria-item">
-                    <img src="Product3.jpg" alt="Tappeto Moderno 3">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto kazak </h3>
-                        <p> 236x165 </p>
+                <div class="servizio-card">
+                    <div class="servizio-img" style="background-image: url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="servizio-content">
+                        <h3>Trattamento Antiacaro</h3>
+                        <p>Eliminazione completa di acari e allergeni con prodotti ipoallergenici e sicuri per la tua famiglia.</p>
+                        <a href="lavaggio e restauro.html" class="servizio-link">Scopri di più</a>
                     </div>
-                </div>
-                <div class="galleria-item">
-                    <img src="product4.jpg" alt="Tappeto Moderno 4">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto qum </h3>
-                        <p> 195x133 </p>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Galleria Tapeti Persiani -->
+    <section class="galleria" id="galleria">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tappeti Persiani</h2>
+                <p>Scopri la nostra collezione di tappeti persiani che uniscono tradizione artigianale e qualità senza tempo</p>
+            </div>
+            <div class="galleria-grid">
+                <div class="galleria-item">
+                    <img src="product1.jpg" alt="Tappeto Saruk">
+                    <div class="galleria-overlay">
+                        <h3>Tappeto Saruk</h3>
+                        <p>208x136 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Saruk%20208x136" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="galleria-item">
+                    <img src="product2.jpg" alt="Tappeto Mout">
+                    <div class="galleria-overlay">
+                        <h3>Tappeto Mout</h3>
+                        <p>202x145 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Mout%20202x145" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="galleria-item">
+                    <img src="Product3.jpg" alt="Tappeto Kazak">
+                    <div class="galleria-overlay">
+                        <h3>Tappeto Kazak</h3>
+                        <p>236x165 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Kazak%20236x165" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="galleria-item">
+                    <img src="product4.jpg" alt="Tappeto Qum">
+                    <div class="galleria-overlay">
+                        <h3>Tappeto Qum</h3>
+                        <p>195x133 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Qum%20195x133" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galleria Tapeti Moderni -->
     <section class="galleria" id="galleria">
         <div class="container">
             <div class="section-title">
@@ -855,6 +934,9 @@
                     <div class="galleria-overlay">
                         <h3>Tappeto Contemporaneo</h3>
                         <p>Design minimalista e colori neutri</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Contemporaneo" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
                     </div>
                 </div>
                 <div class="galleria-item">
@@ -862,6 +944,9 @@
                     <div class="galleria-overlay">
                         <h3>Tappeto Geometrico</h3>
                         <p>Forme geometriche e pattern audaci</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Geometrico" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
                     </div>
                 </div>
                 <div class="galleria-item">
@@ -869,6 +954,9 @@
                     <div class="galleria-overlay">
                         <h3>Tappeto Scultoreo</h3>
                         <p>Texture tridimensionale e materiali innovativi</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Scultoreo" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
                     </div>
                 </div>
                 <div class="galleria-item">
@@ -876,6 +964,9 @@
                     <div class="galleria-overlay">
                         <h3>Tappeto Astratto</h3>
                         <p>Composizione artistica e colori vivaci</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Astratto" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
                     </div>
                 </div>
                 <div class="galleria-item">
@@ -883,10 +974,14 @@
                     <div class="galleria-overlay">
                         <h3>Tappeto Minimal</h3>
                         <p>Linee pulite e eleganza essenziale</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Minimal" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
     <!-- Perché Sceglierci -->
     <section class="perche-sceglierci" id="perche-sceglierci">
@@ -952,9 +1047,9 @@
                         </div>
                         <div class="info-text">
                             <h4>Telefono</h4>
-                            <p>+39 071206066</p>
-                            <p>+39 071206036</p>
-                            <p>+39 3408105898</p>
+                            <p><a href="tel:+39071206066" class="phone-link">+39 071206066</a></p>
+                            <p><a href="tel:+39071206036" class="phone-link">+39 071206036</a></p>
+                            <p><a href="tel:+393408105898" class="phone-link">+39 3408105898</a></p>
                         </div>
                     </div>
                     <div class="info-contatto">
@@ -1046,9 +1141,9 @@
                     <h5>Email</h5>
                     <p>aliestekicarpets@gmail.com</p>
                     <h5>Telefono</h5>
-                    <p>+39 071206066</p>
-                    <p>+39 071206036</p>
-                    <p>+39 3408105898</p>
+                    <p><a href="tel:+39071206066" class="phone-link">+39 071206066</a></p>
+                    <p><a href="tel:+39071206036" class="phone-link">+39 071206036</a></p>
+                    <p><a href="tel:+393408105898" class="phone-link">+39 3408105898</a></p>
                 </div>
             </div>
             <div class="copyright">
@@ -1119,9 +1214,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
