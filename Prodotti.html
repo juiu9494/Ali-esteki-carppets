@@ -15,12 +15,11 @@
         }
         
         :root {
-            --gold: #d4af37;
-            --black: #1a1a1a;
+            --black: #000000;
             --white: #ffffff;
-            --light-gray: #f8f8f8;
+            --light-gray: #f5f5f5;
             --dark-gray: #333333;
-            --beige: #f5f1e8;
+            --medium-gray: #666666;
         }
         
         body {
@@ -44,7 +43,7 @@
             top: 0;
             z-index: 1000;
             transition: all 0.3s ease;
-            border-bottom: 2px solid var(--gold);
+            border-bottom: 2px solid var(--white);
         }
         
         .header-content {
@@ -66,6 +65,7 @@
         .logo img {
             max-width: 100%;
             height: auto;
+            filter: brightness(0) invert(1);
         }
         
         nav ul {
@@ -88,7 +88,7 @@
         }
         
         nav ul li a:hover {
-            color: var(--gold);
+            color: var(--light-gray);
         }
         
         nav ul li a::after {
@@ -98,7 +98,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: var(--gold);
+            background-color: var(--white);
             transition: width 0.3s;
         }
         
@@ -146,7 +146,7 @@
         
         .btn {
             display: inline-block;
-            background-color: var(--gold);
+            background-color: var(--white);
             color: var(--black);
             padding: 16px 40px;
             border-radius: 0;
@@ -154,205 +154,135 @@
             font-weight: 600;
             transition: all 0.3s;
             font-size: 1.1rem;
-            border: 2px solid var(--gold);
+            border: 2px solid var(--white);
             letter-spacing: 1px;
         }
         
         .btn:hover {
             background-color: transparent;
-            color: var(--gold);
+            color: var(--white);
             transform: translateY(-5px);
         }
         
-        /* Servizi */
-        .servizi {
-            padding: 100px 0;
+        /* Categorie Filtri */
+        .categorie-filtri {
+            padding: 80px 0 40px;
             background-color: var(--light-gray);
-        }
-        
-        .section-title {
             text-align: center;
-            margin-bottom: 60px;
         }
         
-        .section-title h2 {
-            font-size: 2.8rem;
-            color: var(--black);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-            font-weight: 300;
-            letter-spacing: 1px;
+        .filtri-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
         }
         
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 3px;
-            background: var(--gold);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .section-title p {
-            color: #666;
-            max-width: 700px;
-            margin: 30px auto 0;
-            font-size: 1.2rem;
-            line-height: 1.7;
-        }
-        
-        .servizi-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-        
-        .servizio-card {
+        .filtro-btn {
             background-color: var(--white);
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.4s;
-            position: relative;
-            border-bottom: 3px solid var(--gold);
-        }
-        
-        .servizio-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .servizio-img {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.5s;
-        }
-        
-        .servizio-card:hover .servizio-img {
-            transform: scale(1.05);
-        }
-        
-        .servizio-content {
-            padding: 30px;
-            position: relative;
-        }
-        
-        .servizio-content h3 {
-            margin-bottom: 15px;
             color: var(--black);
-            font-size: 1.5rem;
-            font-weight: 500;
-        }
-        
-        .servizio-content p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-        
-        .servizio-link {
-            color: var(--black);
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
+            border: 2px solid var(--black);
+            padding: 12px 25px;
+            cursor: pointer;
             transition: all 0.3s;
+            font-weight: 600;
             font-size: 1.1rem;
         }
         
-        .servizio-link:hover {
-            color: var(--gold);
+        .filtro-btn:hover, .filtro-btn.active {
+            background-color: var(--black);
+            color: var(--white);
         }
         
-        .servizio-link::after {
-            content: '→';
-            margin-left: 10px;
-            transition: transform 0.3s;
+        /* Prodotti Grid */
+        .prodotti-section {
+            padding: 60px 0 100px;
+            background-color: var(--light-gray);
         }
         
-        .servizio-link:hover::after {
-            transform: translateX(5px);
-        }
-        
-        /* Galleria Tapeti Moderni */
-        .galleria {
-            padding: 100px 0;
-            background-color: var(--white);
-        }
-        
-        .galleria-grid {
+        .prodotti-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
         
-        .galleria-item {
+        .prodotto-item {
+            background-color: var(--white);
             border-radius: 0;
             overflow: hidden;
-            height: 350px;
-            position: relative;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: all 0.4s;
+            position: relative;
+            display: none; /* Nascondi inizialmente tutti i prodotti */
         }
         
-        .galleria-item:hover {
+        .prodotto-item.show {
+            display: block; /* Mostra solo i prodotti con classe show */
+        }
+        
+        .prodotto-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
-        .galleria-item img {
+        .prodotto-item img {
             width: 100%;
-            height: 100%;
+            height: 250px;
             object-fit: cover;
             transition: transform 0.5s;
+            filter: grayscale(100%);
         }
         
-        .galleria-item:hover img {
-            transform: scale(1.1);
+        .prodotto-item:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
         }
         
-        .galleria-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
-            color: white;
+        .prodotto-info {
             padding: 20px;
-            transform: translateY(100%);
-            transition: transform 0.3s;
         }
         
-        .galleria-item:hover .galleria-overlay {
-            transform: translateY(0);
-        }
-        
-        .galleria-overlay h3 {
-            margin-bottom: 5px;
+        .prodotto-info h3 {
+            margin-bottom: 10px;
+            color: var(--black);
             font-size: 1.3rem;
+        }
+        
+        .prodotto-info p {
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .prodotto-categoria {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
         }
         
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
-            background-color: #25D366;
-            color: white;
+            background-color: var(--black);
+            color: var(--white);
             padding: 10px 20px;
-            border-radius: 4px;
+            border-radius: 0;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 10px;
             transition: all 0.3s;
+            border: 1px solid var(--black);
+            width: 100%;
+            justify-content: center;
         }
         
         .whatsapp-btn:hover {
-            background-color: #128C7E;
-            transform: translateY(-3px);
+            background-color: var(--white);
+            color: var(--black);
         }
         
         .whatsapp-btn i {
@@ -400,12 +330,12 @@
             font-size: 3.5rem;
             margin-bottom: 25px;
             display: block;
-            color: var(--gold);
+            color: var(--white);
         }
         
         .vantaggio h3 {
             margin-bottom: 20px;
-            color: var(--gold);
+            color: var(--white);
             font-size: 1.5rem;
             font-weight: 500;
         }
@@ -419,7 +349,7 @@
         /* Contatti */
         .contatti {
             padding: 100px 0;
-            background-color: var(--beige);
+            background-color: var(--light-gray);
         }
         
         .contatti-content {
@@ -446,7 +376,7 @@
             position: absolute;
             width: 50px;
             height: 3px;
-            background: var(--gold);
+            background: var(--black);
             bottom: -10px;
             left: 0;
         }
@@ -460,14 +390,14 @@
         .info-icon {
             width: 50px;
             height: 50px;
-            background: var(--gold);
+            background: var(--black);
             border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 20px;
             flex-shrink: 0;
-            color: var(--black);
+            color: var(--white);
         }
         
         .info-text h4 {
@@ -477,18 +407,18 @@
         }
         
         .info-text p {
-            color: #666;
+            color: var(--medium-gray);
             font-size: 1.1rem;
         }
         
         .phone-link {
-            color: #666;
+            color: var(--medium-gray);
             text-decoration: none;
             transition: color 0.3s;
         }
         
         .phone-link:hover {
-            color: var(--gold);
+            color: var(--black);
         }
         
         .form-contatti {
@@ -496,7 +426,7 @@
             padding: 40px;
             border-radius: 0;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-top: 3px solid var(--gold);
+            border-top: 3px solid var(--black);
         }
         
         .form-group {
@@ -516,7 +446,7 @@
         
         .form-contatti input:focus,
         .form-contatti textarea:focus {
-            border-color: var(--gold);
+            border-color: var(--black);
             outline: none;
         }
         
@@ -540,8 +470,7 @@
         }
         
         .btn-invia:hover {
-            background-color: var(--gold);
-            color: var(--black);
+            background-color: var(--dark-gray);
             transform: translateY(-3px);
         }
         
@@ -550,7 +479,7 @@
             background-color: var(--black);
             color: var(--white);
             padding: 70px 0 20px;
-            border-top: 2px solid var(--gold);
+            border-top: 2px solid var(--white);
         }
         
         .footer-content {
@@ -561,7 +490,7 @@
         }
         
         .footer-col h4 {
-            color: var(--gold);
+            color: var(--white);
             margin-bottom: 25px;
             font-size: 1.3rem;
             position: relative;
@@ -574,7 +503,7 @@
             position: absolute;
             width: 40px;
             height: 2px;
-            background: var(--gold);
+            background: var(--white);
             bottom: -10px;
             left: 0;
         }
@@ -587,6 +516,7 @@
         .footer-logo img {
             max-width: 100%;
             height: auto;
+            filter: brightness(0) invert(1);
         }
         
         .footer-col p {
@@ -613,7 +543,7 @@
         }
         
         .footer-links a:hover {
-            color: var(--gold);
+            color: var(--white);
             transform: translateX(5px);
         }
         
@@ -637,7 +567,7 @@
         }
         
         .social-links a:hover {
-            background-color: var(--gold);
+            background-color: var(--white);
             transform: translateY(-5px);
             color: var(--black);
         }
@@ -657,8 +587,8 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background: var(--gold);
-            color: var(--black);
+            background: var(--black);
+            color: var(--white);
             border-radius: 0;
             display: flex;
             align-items: center;
@@ -678,8 +608,8 @@
         }
         
         .back-to-top:hover {
-            background: var(--black);
-            color: var(--gold);
+            background: var(--white);
+            color: var(--black);
             transform: translateY(-5px);
         }
         
@@ -702,7 +632,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
             margin: 20px;
-            border-left: 4px solid var(--gold);
+            border-left: 4px solid var(--black);
         }
         
         .testimonial-text {
@@ -718,17 +648,47 @@
             font-size: 1.1rem;
         }
         
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--black);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--black);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 30px auto 0;
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+        
         /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
                 font-size: 2.8rem;
             }
             
-            .servizi-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-            
-            .galleria-grid {
+            .prodotti-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
         }
@@ -783,11 +743,7 @@
                 font-size: 1rem;
             }
             
-            .servizi-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .galleria-grid {
+            .prodotti-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -822,117 +778,220 @@
         </div>
     </header>
 
-
-    <!-- Galleria Tapeti Persiani -->
-    <section class="galleria" id="galleria">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <div class="section-title">
-                <h2>Tappeti Persiani</h2>
-                <p>Scopri la nostra collezione di tappeti persiani che uniscono tradizione artigianale e qualità senza tempo</p>
-            </div>
-            <div class="galleria-grid">
-                <div class="galleria-item">
-                    <img src="product1.jpg" alt="Tappeto Saruk">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto Saruk</h3>
-                        <p>208x136 cm</p>
-                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Saruk%20208x136" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
-                        </a>
-                    </div>
-                </div>
-                <div class="galleria-item">
-                    <img src="product2.jpg" alt="Tappeto Mout">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto Mout</h3>
-                        <p>202x145 cm</p>
-                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Mout%20202x145" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
-                        </a>
-                    </div>
-                </div>
-                <div class="galleria-item">
-                    <img src="Product3.jpg" alt="Tappeto Kazak">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto Kazak</h3>
-                        <p>236x165 cm</p>
-                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Kazak%20236x165" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
-                        </a>
-                    </div>
-                </div>
-                <div class="galleria-item">
-                    <img src="product4.jpg" alt="Tappeto Qum">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto Qum</h3>
-                        <p>195x133 cm</p>
-                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Qum%20195x133" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
-                        </a>
-                    </div>
-                </div>
+            <div class="hero-content">
+                <h1>I Nostri Tappeti di Qualità</h1>
+                <p>Scopri la nostra collezione esclusiva di tappeti selezionati con cura, dal design moderno ai pezzi antichi di inestimabile valore.</p>
+                <a href="#prodotti" class="btn">Scopri la Collezione</a>
             </div>
         </div>
     </section>
 
-    <!-- Galleria Tapeti Moderni -->
-    <section class="galleria" id="galleria">
+    <!-- Categorie Filtri -->
+    <section class="categorie-filtri" id="prodotti">
         <div class="container">
             <div class="section-title">
-                <h2>Tappeti Moderni</h2>
-                <p>Scopri la nostra collezione di tappeti moderni che uniscono design contemporaneo e qualità artigianale</p>
+                <h2>Le Nostre Categorie</h2>
+                <p>Scegli una categoria per visualizzare i prodotti corrispondenti</p>
             </div>
-            <div class="galleria-grid">
-                <div class="galleria-item">
-                    <img src="moderno1.jpg" alt="Tappeto Moderno 1">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto Contemporaneo</h3>
-                        <p>Design minimalista e colori neutri</p>
+            <div class="filtri-container">
+                <button class="filtro-btn active" data-categoria="tutti">Tutti i Prodotti</button>
+                <button class="filtro-btn" data-categoria="moderni">Tappeti Moderni</button>
+                <button class="filtro-btn" data-categoria="antichi">Tappeti Antichi</button>
+                <button class="filtro-btn" data-categoria="classici">Tappeti Classici</button>
+                <button class="filtro-btn" data-categoria="qlim">Tappeti Qlim</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prodotti Grid -->
+    <section class="prodotti-section">
+        <div class="container">
+            <div class="prodotti-grid" id="prodotti-grid">
+                <!-- Tappeti Moderni -->
+                <div class="prodotto-item show" data-categoria="moderni">
+                    <img src="moderno1.jpg" alt="Tappeto Contemporaneo">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Moderno</span>
+                        <h3> Tappeto moderno </h3>
                         <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Contemporaneo" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
                         </a>
                     </div>
                 </div>
-                <div class="galleria-item">
-                    <img src="moderno2.jpg" alt="Tappeto Moderno 2">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto Geometrico</h3>
-                        <p>Forme geometriche e pattern audaci</p>
+                
+                <div class="prodotto-item show" data-categoria="moderni">
+                    <img src="moderno2.jpg" alt="Tappeto Geometrico">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Moderno</span>
+                        <h3> Tappeto moderno </h3>
                         <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Geometrico" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
                         </a>
                     </div>
                 </div>
-                <div class="galleria-item">
-                    <img src="moderno3.jpg" alt="Tappeto Moderno 3">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto Scultoreo</h3>
-                        <p>Texture tridimensionale e materiali innovativi</p>
-                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Scultoreo" class="whatsapp-btn">
+                 <div class="prodotto-item show" data-categoria="moderni">
+                    <img src="moderno3.jpg" alt="Tappeto Geometrico">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Moderno</span>
+                        <h3> Tappeto moderno </h3>
+                        
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Geometrico" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
                         </a>
                     </div>
                 </div>
-                <div class="galleria-item">
-                    <img src="moderno4.jpg" alt="Tappeto Moderno 4">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto Astratto</h3>
-                        <p>Composizione artistica e colori vivaci</p>
-                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Astratto" class="whatsapp-btn">
+                 <div class="prodotto-item show" data-categoria="moderni">
+                    <img src="moderno4.jpg" alt="Tappeto Geometrico">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Moderno</span>
+                        <h3> Tappeto moderno </h3>
+                     
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Geometrico" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
                         </a>
                     </div>
                 </div>
-                <div class="galleria-item">
-                    <img src="moderno5.jpg" alt="Tappeto Moderno 5">
-                    <div class="galleria-overlay">
-                        <h3>Tappeto Minimal</h3>
-                        <p>Linee pulite e eleganza essenziale</p>
-                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Minimal" class="whatsapp-btn">
+                 <div class="prodotto-item show" data-categoria="moderni">
+                    <img src="moderno5.jpg" alt="Tappeto Geometrico">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Moderno</span>
+                        <h3>Tappeto moderno </h3>
+                       
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Geometrico" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
                         </a>
                     </div>
                 </div>
+                 <div class="prodotto-item show" data-categoria="moderni">
+                    <img src="moderno6.jpg" alt="Tappeto Geometrico">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Moderno</span>
+                        <h3>Tappeto moderno </h3>
+                        <p></p>
+                        <p><strong></strong></p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Geometrico" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Tappeti Antichi -->
+                <div class="prodotto-item show" data-categoria="antichi">
+                    <img src="product1.jpg" alt="Tappeto Persiano Antico">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Antico</span>
+                        <h3> Tappeto Saruk </h3>
+                    
+                        <p><strong>Dimensioni:</strong> 208x136 cm </p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Persiano%20Antico" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="prodotto-item show" data-categoria="antichi">
+                    <img src="product2.jpg" alt="Tappeto Anatolico">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Antico</span>
+                        <h3> Tappeto Mout </h3>
+                        <p><strong>Dimensioni:</strong> 202x145 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Anatolico" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                 <div class="prodotto-item show" data-categoria="antichi">
+                    <img src="Product3.jpg" alt="Tappeto Anatolico">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Antico</span>
+                        <h3>Tappeto Kazak  </h3>
+                        <p><strong>Dimensioni:</strong> 236x165 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Anatolico" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                 <div class="prodotto-item show" data-categoria="antichi">
+                    <img src="product4.jpg" alt="Tappeto Anatolico">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Antico</span>
+                        <h3> Tappeto Qum </h3>
+                        <p><strong>Dimensioni:</strong> 195x133 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Anatolico" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="prodotto-item show" data-categoria="antichi">
+                    <img src="product5.jpg" alt="Tappeto Anatolico">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Antico</span>
+                        <h3>Tappeto nain </h3>
+                        <p><strong>Dimensioni:</strong> 202x136 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Anatolico" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Tappeti Classici -->
+                <div class="prodotto-item show" data-categoria="classici">
+                    <img src="product3.jpg" alt="Tappeto Saruk">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Classico</span>
+                        <h3>Tappeto Saruk</h3>
+                        <p>Classico tappeto persiano con motivi floreali e bordatura elaborata.</p>
+                        <p><strong>Dimensioni:</strong> 208x136 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Saruk" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="prodotto-item show" data-categoria="classici">
+                    <img src="classico2.jpg" alt="Tappeto Mout">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Classico</span>
+                        <h3>Tappeto Mout</h3>
+                        <p>Eleganza senza tempo con motivi tradizionali e colori caldi.</p>
+                        <p><strong>Dimensioni:</strong> 202x145 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Mout" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Tappeti Qlim -->
+                <div class="prodotto-item show" data-categoria="qlim">
+                    <img src="qlim1.jpg" alt="Tappeto Qlim Blu">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Qlim</span>
+                        <h3>Tappeto Qlim Blu</h3>
+                        <p>Artigianalità raffinata con motivi unici e tonalità di blu intenso.</p>
+                        <p><strong>Dimensioni:</strong> 195x133 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Qlim%20Blu" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="prodotto-item show" data-categoria="qlim">
+                    <img src="qlim2.jpg" alt="Tappeto Qlim Rosso">
+                    <div class="prodotto-info">
+                        <span class="prodotto-categoria">Qlim</span>
+                        <h3>Tappeto Qlim Rosso</h3>
+                        <p>Design tradizionale con sfumature di rosso e dettagli in oro.</p>
+                        <p><strong>Dimensioni:</strong> 210x140 cm</p>
+                        <a href="https://wa.me/393408105898?text=Ciao,%20sono%20interessato%20al%20Tappeto%20Qlim%20Rosso" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Richiedi su WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Altri prodotti moderni -->
             </div>
         </div>
     </section>
@@ -1082,12 +1141,12 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Servizi</h4>
+                    <h4>Categorie Prodotti</h4>
                     <ul class="footer-links">
-                        <li><a href="lavaggio e restauro.html">Lavaggio Tappeti</a></li>
-                        <li><a href="lavaggio e restauro.html">Restauro Tappeti Antichi</a></li>
-                        <li><a href="lavaggio e restauro.html">Trattamento Antiacaro</a></li>
-                        <li><a href="lavaggio e restauro.html">Lavaggio Moquette</a></li>
+                        <li><a href="#prodotti" data-categoria="moderni">Tappeti Moderni</a></li>
+                        <li><a href="#prodotti" data-categoria="antichi">Tappeti Antichi</a></li>
+                        <li><a href="#prodotti" data-categoria="classici">Tappeti Classici</a></li>
+                        <li><a href="#prodotti" data-categoria="qlim">Tappeti Qlim</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1110,6 +1169,54 @@
     <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
 
     <script>
+        // Filtri prodotti per categoria
+        document.addEventListener('DOMContentLoaded', function() {
+            const filtriBtn = document.querySelectorAll('.filtro-btn');
+            const prodotti = document.querySelectorAll('.prodotto-item');
+            
+            // Funzione per filtrare i prodotti
+            function filtraProdotti(categoria) {
+                prodotti.forEach(prodotto => {
+                    if (categoria === 'tutti' || prodotto.getAttribute('data-categoria') === categoria) {
+                        prodotto.classList.add('show');
+                    } else {
+                        prodotto.classList.remove('show');
+                    }
+                });
+            }
+            
+            // Aggiungi event listener ai pulsanti di filtro
+            filtriBtn.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Rimuovi classe active da tutti i pulsanti
+                    filtriBtn.forEach(b => b.classList.remove('active'));
+                    // Aggiungi classe active al pulsante cliccato
+                    this.classList.add('active');
+                    // Filtra i prodotti
+                    const categoria = this.getAttribute('data-categoria');
+                    filtraProdotti(categoria);
+                });
+            });
+            
+            // Filtraggio automatico dai link nel footer
+            const footerLinks = document.querySelectorAll('.footer-links a[data-categoria]');
+            footerLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const categoria = this.getAttribute('data-categoria');
+                    
+                    // Rimuovi classe active da tutti i pulsanti
+                    filtriBtn.forEach(b => b.classList.remove('active'));
+                    // Aggiungi classe active al pulsante corrispondente
+                    document.querySelector(`.filtro-btn[data-categoria="${categoria}"]`).classList.add('active');
+                    // Filtra i prodotti
+                    filtraProdotti(categoria);
+                    // Scorri verso la sezione prodotti
+                    document.getElementById('prodotti').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+
         // Back to top button
         const backToTopButton = document.getElementById('backToTop');
         
@@ -1168,4 +1275,5 @@
     </script>
 </body>
 </html>
+
 
